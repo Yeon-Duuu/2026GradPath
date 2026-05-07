@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GradPath 사용 설명서 — 계명대학교 컴퓨터공학과</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: #111827;
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  /* Cover */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 2px solid #111827;
+    page-break-after: always;
+    padding-bottom: 60px;
+  }
+  .cover-logo {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 32px;
+  }
+  .cover h1 {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .cover-sub {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 48px;
+  }
+  .cover-meta {
+    font-size: 11px;
+    color: #9ca3af;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+    display: flex;
+    gap: 32px;
+  }
+  .cover-meta span strong {
+    display: block;
+    color: #374151;
+    font-size: 12px;
+  }
+
+  /* Section header */
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #111827;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 28px 0 10px;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  h3::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 13px;
+    background: #3b82f6;
+    border-radius: 2px;
+  }
+
+  p { margin-bottom: 10px; color: #374151; }
+
+  ul, ol { padding-left: 18px; margin-bottom: 12px; }
+  li { margin-bottom: 5px; color: #374151; }
+
+  /* Cards */
+  .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+  }
+  .card-title .badge-warn {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: #fefce8;
+    color: #a16207;
+    border: 1px solid #fde047;
+  }
+
+  /* Nav indicator */
+  .nav-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .nav-item {
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-item.active {
+    border-bottom: 2px solid #3b82f6;
+    color: #111827;
+    font-weight: 600;
+  }
+
+  /* Level table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+  th {
+    background: #f9fafb;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+  }
+  td {
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+  }
+  tr:nth-child(even) td { background: #f9fafb; }
+
+  /* Step */
+  .step-list { counter-reset: step; }
+  .step-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .step-num {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background: #3b82f6;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .step-content strong { display: block; font-size: 13px; margin-bottom: 3px; }
+  .step-content p { margin: 0; font-size: 12px; color: #6b7280; }
+
+  /* Tip box */
+  .tip {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 12px;
+    color: #1e40af;
+  }
+  .tip strong { font-weight: 700; }
+
+  .warn {
+    background: #fefce8;
+    border: 1px solid #fde047;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 12px;
+    color: #713f12;
+  }
+
+  /* URL */
+  .url-box {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #2563eb;
+    margin: 10px 0;
+    word-break: break-all;
+  }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid #e5e7eb; margin: 32px 0; }
+
+  /* Year requirements table */
+  .req-table { font-size: 11px; }
+  .req-table th { font-size: 11px; padding: 6px 10px; }
+  .req-table td { font-size: 11px; padding: 6px 10px; }
+
+  /* Color badge preview */
+  .type-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .type-blue   { background: #eff6ff; color: #2563eb; }
+  .type-indigo { background: #eef2ff; color: #4338ca; }
+  .type-green  { background: #ecfdf5; color: #059669; }
+  .type-amber  { background: #fffbeb; color: #d97706; }
+  .type-gray   { background: #f3f4f6; color: #6b7280; }
+
+  /* Print */
+  @media print {
+    body { font-size: 12px; }
+    .page { padding: 32px 28px; }
+    .cover { min-height: auto; padding-bottom: 40px; }
+    h2 { margin-top: 36px; }
+    .card { break-inside: avoid; }
+    .step-item { break-inside: avoid; }
+    table { break-inside: avoid; }
+  }
+  @page { margin: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="cover-logo">GradPath · 계명대학교 컴퓨터공학과</div>
+    <h1>졸업 요건 시뮬레이터<br>사용 설명서</h1>
+    <p class="cover-sub">내가 지금까지 들은 과목으로 졸업할 수 있을까?<br>GradPath에서 빠르게 확인하고, 수강 계획을 세워보세요.</p>
+    <div class="cover-meta">
+      <span><strong>접속 주소</strong>https://gradpath-phi.vercel.app</span>
+      <span><strong>대상</strong>계명대 컴퓨터공학과 전학년</span>
+      <span><strong>작성일</strong>2026년 5월</span>
+    </div>
+  </div>
+
+  <!-- 목차 -->
+  <h2>목차</h2>
+  <table>
+    <tr><td style="width:40px;">1</td><td><strong>시작하기</strong> — 접속 방법 · 학번 설정</td></tr>
+    <tr><td>2</td><td><strong>대시보드</strong> — 이수율 확인 · 레벨 · 뱃지 · 과목 입력 · 경고</td></tr>
+    <tr><td>3</td><td><strong>시뮬레이터</strong> — 수강 예정 과목으로 졸업 가능 여부 확인</td></tr>
+    <tr><td>4</td><td><strong>로드맵</strong> — 선배들의 진로 계획 참고</td></tr>
+    <tr><td>5</td><td><strong>집중 타이머</strong> — 뽀모도로 공부 타이머</td></tr>
+    <tr><td>6</td><td><strong>로그인 / 회원가입</strong> — 계정 만들기 · 닉네임</td></tr>
+    <tr><td>7</td><td><strong>선후배 게시판</strong> — 진로 질문 · 댓글 · 실시간 공유</td></tr>
+    <tr><td>8</td><td><strong>입학연도별 졸업 요건 요약</strong></td></tr>
+    <tr><td>9</td><td><strong>자주 묻는 질문</strong></td></tr>
+  </table>
+
+  <hr />
+
+  <!-- 1. 시작하기 -->
+  <h2>1. 시작하기</h2>
+
+  <h3>접속 방법</h3>
+  <p>아래 주소를 브라우저(크롬 권장)에서 열면 됩니다. 앱 설치 필요 없음.</p>
+  <div class="url-box">https://gradpath-phi.vercel.app</div>
+
+  <h3>첫 방문 안내</h3>
+  <p>처음 접속하면 상단에 안내 배너가 표시됩니다. 학번과 입학연도를 입력하고 이수한 과목을 추가하면 졸업요건 달성률을 바로 확인할 수 있습니다.</p>
+
+  <h3>학번과 입학연도 입력</h3>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>대시보드 → 학생 정보 섹션</strong>
+        <p>페이지를 열면 "학생 정보" 입력 폼이 있습니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>학번 7자리 입력</strong>
+        <p>예: 2220001 (숫자 7자리만 입력, 다른 형식은 오류 표시)</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>입학연도 선택 (2010~2026)</strong>
+        <p>드롭다운에서 본인 입학연도를 선택하면 해당 연도의 졸업 요건이 자동으로 적용됩니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>저장 버튼 클릭</strong>
+        <p>저장하면 브라우저에 자동 기억됩니다. 다음에 열어도 유지됩니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>데이터 저장 방식:</strong> 학번·이수 과목 등 졸업 관련 데이터는 내 브라우저(localStorage)에만 저장됩니다. 단, <strong>계정(로그인)</strong>과 <strong>게시판 글·댓글</strong>은 Firebase 클라우드에 저장되어 모든 사용자가 실시간으로 공유합니다.
+  </div>
+
+  <hr />
+
+  <!-- 2. 대시보드 -->
+  <h2>2. 대시보드 (/)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item active">대시보드</span>
+    <span class="nav-item">시뮬레이터</span>
+    <span class="nav-item">로드맵</span>
+    <span class="nav-item">게시판</span>
+    <span class="nav-item">타이머</span>
+  </div>
+
+  <p>졸업 요건 전체 현황을 한눈에 볼 수 있는 메인 페이지입니다.</p>
+
+  <h3>레벨 시스템</h3>
+  <p>전체 이수율에 따라 레벨이 자동으로 부여됩니다. 다음 레벨까지 몇 학점 남았는지도 표시됩니다.</p>
+  <table>
+    <tr><th>이수율</th><th>레벨</th><th>설명</th></tr>
+    <tr><td>0% ~ 24%</td><td>🌱 새내기</td><td>막 시작한 단계</td></tr>
+    <tr><td>25% ~ 49%</td><td>📚 중급생</td><td>과목을 쌓아가는 중</td></tr>
+    <tr><td>50% ~ 74%</td><td>💻 고학년</td><td>절반 이상 달성</td></tr>
+    <tr><td>75% ~ 99%</td><td>🎯 졸업예정자</td><td>마무리 단계</td></tr>
+    <tr><td>100% + 모든 영역 충족</td><td>🎓 졸업가능!</td><td>졸업 요건 완전 충족</td></tr>
+  </table>
+
+  <h3>달성 뱃지 (5종)</h3>
+  <p>각 영역 요건을 충족하면 뱃지가 파란색으로 활성화됩니다. 미달성 뱃지는 흐리게 표시됩니다.</p>
+  <table>
+    <tr><th>뱃지</th><th>달성 조건</th></tr>
+    <tr><td>🏅 전공필수 완료</td><td>전공필수(전필) 필요 학점 이상 이수 + 필수 과목 전부 이수</td></tr>
+    <tr><td>🏅 공통교양 완료</td><td>공통교양(교필) 필요 학점 이상 이수 + 필수 과목 전부 이수</td></tr>
+    <tr><td>🏅 균형교양 완료</td><td>균형/일반교양(교선) 필요 학점 이상 이수</td></tr>
+    <tr><td>🏅 전공선택 완료</td><td>전공선택(전선) 필요 학점 이상 이수</td></tr>
+    <tr><td>🎓 졸업요건 전체 충족</td><td>위 4개 모두 충족 + 총 졸업학점(120 또는 130) 달성</td></tr>
+  </table>
+
+  <h3>이수율 차트</h3>
+  <ul>
+    <li><strong>도넛 차트:</strong> 전체 이수율(%)을 원형으로 시각화</li>
+    <li><strong>막대 차트:</strong> 5개 영역별 이수 학점 vs 필요 학점 비교</li>
+    <li><strong>진행률 바:</strong> 각 영역별 달성 비율 — 100% 달성 시 <strong>✓ 충족</strong> 표시</li>
+  </ul>
+
+  <h3>미충족 항목 (경고)</h3>
+  <p>졸업 요건 중 아직 충족하지 못한 항목들이 목록으로 표시됩니다. 경고가 모두 사라지면 졸업 요건 충족입니다.</p>
+  <table>
+    <tr><th>경고 유형</th><th>의미</th></tr>
+    <tr><td>[전필] 이수 학점 부족</td><td>전공필수 학점이 모자람 — 필수 과목 추가 이수 필요</td></tr>
+    <tr><td>[교필] 필수 과목 미이수</td><td>공통교양 필수 과목 중 미이수 과목 있음</td></tr>
+    <tr><td>[선수과목] ○○ 미이수</td><td>이수한 과목의 선수과목을 먼저 이수하지 않음</td></tr>
+    <tr><td>[학점초과] N학년 M학기</td><td>해당 학기 등록 학점이 최대 허용 학점 초과 (2024년 입학: 18학점, 2023년 이전: 20학점)</td></tr>
+  </table>
+
+  <div class="tip">
+    <strong>졸업 가능 판정:</strong> 헤더 우측 배지가 <strong>파란색 "졸업 가능"</strong>으로 바뀌면 현재 이수 내역으로 졸업 요건이 충족된 것입니다.
+  </div>
+
+  <h3>이수 과목 관리</h3>
+  <p>이수한 과목마다 영역을 색상으로 구분한 뱃지가 태그에 표시됩니다.</p>
+  <p>
+    <span class="type-badge type-blue">전필</span> 전공필수 &nbsp;
+    <span class="type-badge type-indigo">전선</span> 전공선택 &nbsp;
+    <span class="type-badge type-green">교필</span> 공통교양 &nbsp;
+    <span class="type-badge type-amber">교선</span> 균형교양 &nbsp;
+    <span class="type-badge type-gray">자선</span> 자유선택
+  </p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">+</div>
+      <div class="step-content">
+        <strong>과목 추가 — 검색 후 클릭</strong>
+        <p>하단 "과목 추가" 영역에서 과목명·코드·영역(전선, 교필 등)으로 검색할 수 있습니다. 결과에서 버튼을 클릭하면 이수 과목으로 등록됩니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">×</div>
+      <div class="step-content">
+        <strong>과목 제거</strong>
+        <p>"이수 과목" 영역에서 태그 옆 × 버튼을 클릭하면 목록에서 제거됩니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- 3. 시뮬레이터 -->
+  <h2>3. 시뮬레이터 (/simulate)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item">대시보드</span>
+    <span class="nav-item active">시뮬레이터</span>
+    <span class="nav-item">로드맵</span>
+    <span class="nav-item">게시판</span>
+    <span class="nav-item">타이머</span>
+  </div>
+
+  <p>"다음 학기에 이 과목들을 들으면 졸업할 수 있을까?"를 미리 확인하는 기능입니다. <strong>실제 이수 내역은 변경되지 않습니다.</strong></p>
+
+  <h3>사용 방법</h3>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>과목 검색</strong>
+        <p>과목명, 과목코드, 영역(전필·전선·교필 등)으로 검색합니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>+ 추가 클릭</strong>
+        <p>수강 예정 과목을 시뮬레이션 바구니에 추가합니다. 이미 이수한 과목은 "완료"로 표시됩니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>실시간 결과 확인</strong>
+        <p>우측에서 졸업 가능 여부, 변경되는 학점, 영역별 변화를 즉시 확인합니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>초기화</strong>
+        <p>시뮬레이션 결과를 지우려면 상단 "초기화" 버튼을 클릭합니다. 실제 이수 내역에는 영향 없습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>영역별 변화 바 읽는 법</h3>
+  <ul>
+    <li><span style="color:#3b82f6;font-weight:600;">파란색 바</span> → 현재 이수 학점</li>
+    <li><span style="color:#9ca3af;font-weight:600;">회색 바</span> → 시뮬레이션 과목 추가 후 예상 학점</li>
+    <li>회색이 파란색보다 길면 시뮬레이션으로 학점이 추가된 것</li>
+    <li>요건 충족 시 "요건 충족" 메시지 표시</li>
+  </ul>
+
+  <div class="warn">
+    <strong>선수과목 미충족 주의:</strong> 선수과목을 이수(또는 시뮬레이션 추가)하지 않은 과목을 추가하려 하면 "선수과목 필요: ○○○" 오류 메시지가 표시되고 추가되지 않습니다.
+  </div>
+
+  <hr />
+
+  <!-- 4. 로드맵 -->
+  <h2>4. 로드맵 (/roadmap)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item">대시보드</span>
+    <span class="nav-item">시뮬레이터</span>
+    <span class="nav-item active">로드맵</span>
+    <span class="nav-item">게시판</span>
+    <span class="nav-item">타이머</span>
+  </div>
+
+  <p>취업, 대학원, 자격증 취득 등 다양한 목표별 선배들의 로드맵을 참고할 수 있습니다.</p>
+
+  <h3>로드맵 목록 (10개)</h3>
+  <table>
+    <tr><th>목표</th><th>로드맵 이름</th></tr>
+    <tr><td>취업</td><td>백엔드 개발자, 프론트엔드 개발자, 보안 전문가, 데이터 사이언티스트, 임베디드/IoT, 클라우드/DevOps, 게임 개발자</td></tr>
+    <tr><td>대학원</td><td>AI/ML 연구자, 소프트웨어 아키텍트</td></tr>
+    <tr><td>자격증</td><td>정보처리기사 취득</td></tr>
+  </table>
+
+  <h3>사용 방법</h3>
+  <ul>
+    <li>상단 필터로 목표별 분류: <strong>전체 / 취업 / 대학원 / 자격증</strong></li>
+    <li>카드의 <strong>"상세"</strong> 클릭 → 학년별 계획, 활동, 목표 기업 모달 확인</li>
+    <li><strong>"저장"</strong> 클릭 → 로드맵 상단에 "내 계획" 배너 표시</li>
+  </ul>
+
+  <hr />
+
+  <!-- 5. 타이머 -->
+  <h2>5. 집중 타이머 (/timer)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item">대시보드</span>
+    <span class="nav-item">시뮬레이터</span>
+    <span class="nav-item">로드맵</span>
+    <span class="nav-item">게시판</span>
+    <span class="nav-item active">타이머</span>
+  </div>
+
+  <p>뽀모도로 기법(25분 집중 + 5분 휴식)을 기반으로 한 공부 타이머입니다.</p>
+
+  <h3>기본 조작</h3>
+  <table>
+    <tr><th>버튼</th><th>기능</th></tr>
+    <tr><td><strong>시작</strong></td><td>타이머 시작. 원형 바가 채워지며 카운트다운</td></tr>
+    <tr><td><strong>일시정지</strong></td><td>타이머 멈춤. 다시 시작하면 이어서 진행</td></tr>
+    <tr><td><strong>리셋</strong></td><td>현재 세션 취소, 25분 집중으로 초기화</td></tr>
+  </table>
+
+  <h3>자동 전환 & 통계</h3>
+  <ul>
+    <li>25분 집중이 끝나면 자동으로 5분 휴식으로 전환</li>
+    <li>집중 세션 완료 시 오늘 세션 수 +1 기록</li>
+    <li><strong>오늘 현황:</strong> 완료 세션 수 + 누적 집중 분</li>
+    <li><strong>이번 주 세션:</strong> 최근 7일 일별 세션 수 꺾은선 그래프</li>
+    <li>통계는 브라우저 저장소에 날짜별로 누적 저장됩니다</li>
+  </ul>
+
+  <div class="tip">
+    <strong>뽀모도로 기법이란?</strong> 25분 집중 → 5분 휴식을 반복하는 시간 관리 방법입니다. 짧은 집중 단위로 생산성을 높이고 번아웃을 방지하는 데 효과적입니다.
+  </div>
+
+  <hr />
+
+  <!-- 6. 로그인 / 회원가입 -->
+  <h2>6. 로그인 / 회원가입 (/login)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item">대시보드</span>
+    <span class="nav-item">시뮬레이터</span>
+    <span class="nav-item">로드맵</span>
+    <span class="nav-item">게시판</span>
+    <span class="nav-item active">로그인</span>
+    <span class="nav-item">타이머</span>
+  </div>
+
+  <p>게시판에 글을 쓰거나 댓글을 달려면 계정이 필요합니다. 로그인하지 않아도 읽기는 가능합니다.</p>
+
+  <h3>회원가입</h3>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>상단 네비바 "로그인" 클릭 → 회원가입 탭 선택</strong>
+        <p>로그인 페이지에서 "회원가입" 탭을 클릭합니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>아이디(4자 이상) + 비밀번호(4자 이상) 입력</strong>
+        <p>아이디는 숫자·영문·한글 모두 가능합니다. 중복 아이디는 사용할 수 없습니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>가입하기 클릭 → 랜덤 닉네임 확인</strong>
+        <p>가입 완료 화면에 닉네임이 표시됩니다. 형식: <strong>형용사 + 동물 + 숫자</strong> (예: 활발한여우327)</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>"확인 — 시작하기" 버튼 클릭</strong>
+        <p>닉네임을 확인한 후 버튼을 누르면 대시보드로 이동합니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <strong>주의:</strong> 닉네임은 랜덤 부여되며 변경할 수 없습니다. 아이디와 비밀번호를 잊어버리면 복구가 불가능하므로 반드시 기록해두세요.
+  </div>
+
+  <h3>로그인 / 로그아웃</h3>
+  <ul>
+    <li>로그인: 아이디 + 비밀번호 입력 후 로그인 버튼 클릭</li>
+    <li>로그인 성공 시 상단 네비바에 닉네임이 표시됩니다</li>
+    <li>로그아웃: 네비바 우측 "로그아웃" 버튼 클릭</li>
+    <li>로그인 상태는 브라우저를 닫아도 유지됩니다 (localStorage 세션)</li>
+  </ul>
+
+  <div class="tip">
+    <strong>계정 데이터 저장 위치:</strong> 계정 정보(아이디·비밀번호·닉네임)는 Firebase 클라우드에 저장됩니다. 다른 컴퓨터에서도 같은 계정으로 로그인할 수 있습니다.
+  </div>
+
+  <hr />
+
+  <!-- 7. 선후배 게시판 -->
+  <h2>7. 선후배 게시판 (/board)</h2>
+
+  <div class="nav-bar">
+    <span class="nav-item">대시보드</span>
+    <span class="nav-item">시뮬레이터</span>
+    <span class="nav-item">로드맵</span>
+    <span class="nav-item active">게시판</span>
+    <span class="nav-item">로그인</span>
+    <span class="nav-item">타이머</span>
+  </div>
+
+  <p>졸업 후 진로, 취업, 대학원, 자격증 등에 대해 선배에게 질문하고 답변을 받을 수 있는 실시간 공유 게시판입니다. <strong>모든 사용자가 같은 게시판을 공유합니다.</strong></p>
+
+  <h3>카테고리</h3>
+  <table>
+    <tr><th>카테고리</th><th>용도</th></tr>
+    <tr><td>진로질문</td><td>졸업 후 커리어 방향, 취업/대학원 선택 등 일반적인 진로 고민</td></tr>
+    <tr><td>취업</td><td>기업 준비, 인턴, 포트폴리오, 코딩 테스트 관련</td></tr>
+    <tr><td>대학원</td><td>대학원 진학, 연구실, 장학금, 입시 관련</td></tr>
+    <tr><td>자격증</td><td>정보처리기사, 네트워크관리사 등 자격증 준비</td></tr>
+    <tr><td>일반</td><td>위 카테고리에 해당하지 않는 자유 주제</td></tr>
+  </table>
+
+  <h3>글쓰기</h3>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>로그인 후 "글쓰기" 버튼 클릭</strong>
+        <p>비로그인 상태에서는 "로그인 후 작성" 버튼이 표시됩니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>카테고리 · 제목 · 내용 입력</strong>
+        <p>제목은 최대 80자, 내용은 자유롭게 작성합니다.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>"등록" 클릭</strong>
+        <p>즉시 게시판에 반영되며, 다른 사용자도 실시간으로 볼 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>댓글 · 삭제</h3>
+  <ul>
+    <li>게시글 클릭 → 상세 모달에서 댓글 달기 가능 (로그인 필요)</li>
+    <li>본인이 작성한 게시글·댓글만 삭제 가능 — 삭제 전 확인 다이얼로그가 표시됩니다</li>
+    <li>삭제된 게시글·댓글은 복구할 수 없습니다</li>
+  </ul>
+
+  <h3>검색 및 필터</h3>
+  <ul>
+    <li>상단 검색창: 제목, 내용, 닉네임으로 검색</li>
+    <li>카테고리 버튼: 원하는 카테고리만 필터링</li>
+  </ul>
+
+  <div class="tip">
+    <strong>실시간 동기화:</strong> 게시판 데이터는 Firebase Firestore에 저장되어 모든 기기·사용자가 실시간으로 공유합니다. 페이지를 새로고침하지 않아도 새 글이 자동으로 표시됩니다.
+  </div>
+
+  <hr />
+
+  <!-- 8. 입학연도별 졸업 요건 요약 -->
+  <h2>8. 입학연도별 졸업 요건 요약</h2>
+
+  <p>계명대학교 2026 학과 생활 가이드북 기반 실데이터입니다. 입학연도를 선택하면 아래 요건이 자동으로 적용됩니다.</p>
+
+  <table class="req-table">
+    <tr>
+      <th>입학연도</th>
+      <th>총 졸업학점</th>
+      <th>공통교양(교필)</th>
+      <th>균형교양(교선)</th>
+      <th>전필</th>
+      <th>전선</th>
+      <th>자선</th>
+      <th>학기당 최대</th>
+    </tr>
+    <tr><td>2025~2026</td><td>120</td><td>12 (7과목)</td><td>18</td><td>7</td><td>62</td><td>21</td><td>18학점</td></tr>
+    <tr><td>2024</td><td>120</td><td>12 (7과목)</td><td>18</td><td>7</td><td>62</td><td>21</td><td>18학점</td></tr>
+    <tr><td>2022~2023</td><td>130</td><td>12 (7과목)</td><td>15</td><td>7</td><td>62</td><td>34</td><td>20학점</td></tr>
+    <tr><td>2014~2021</td><td>130</td><td>12 (5과목*)</td><td>15</td><td>7</td><td>62</td><td>34</td><td>20학점</td></tr>
+    <tr><td>2012~2013</td><td>130</td><td>12 (5과목*)</td><td>18</td><td>7</td><td>62</td><td>31</td><td>20학점</td></tr>
+    <tr><td>2010~2011</td><td>130</td><td>12 (5과목*)</td><td>18</td><td>7</td><td>53</td><td>40</td><td>20학점</td></tr>
+  </table>
+  <p style="font-size:11px;color:#6b7280;">* 2021년 이전: AI와컴퓨팅사고(GE005), 스마트비즈니스와창업기초(GE006) 제외 — 2022년부터 필수 지정</p>
+  <p style="font-size:11px;color:#6b7280;">** 2025~2026년 요건은 2024년 기준 추정값이며, 공식 확정 시 변경될 수 있습니다.</p>
+
+  <div class="warn">
+    <strong>주의:</strong> GradPath의 요건은 블루북 기준으로 입력되어 있습니다. 개인별 예외사항(편입, 복수전공, 학점 인정 등)은 반영되지 않으므로, 최종 확인은 반드시 학과 사무실 또는 계명대 포털(K-Cloud)에서 진행하세요.
+  </div>
+
+  <hr />
+
+  <!-- 9. FAQ -->
+  <h2>9. 자주 묻는 질문</h2>
+
+  <div class="card">
+    <div class="card-title">Q. 다른 컴퓨터에서 내 이수 내역이 안 보여요</div>
+    데이터는 각 브라우저의 로컬 저장소에만 저장됩니다. 다른 컴퓨터에서는 다시 입력해야 합니다.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 입학연도를 바꾸면 요건이 바뀌나요?</div>
+    네. 입학연도 선택 후 저장하면 해당 연도의 졸업 요건이 즉시 적용되어 이수율과 경고가 다시 계산됩니다.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 시뮬레이터에서 추가한 과목이 대시보드에도 반영되나요?</div>
+    아닙니다. 시뮬레이터는 가상 계획만 확인하는 기능입니다. 실제 이수 내역은 대시보드에서만 수정됩니다.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 채플(0학점)은 어떻게 처리하나요?</div>
+    채플은 학점은 0이지만 필수 과목입니다. 대시보드 과목 추가에서 "채플 (P/F 필수)"을 검색해 추가해야 관련 경고가 사라집니다.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 선수과목이 뭔가요?</div>
+    특정 과목을 수강하기 위해 먼저 이수해야 하는 과목입니다. 예를 들어 "C++프로그래밍"은 "C프로그래밍"을 먼저 들어야 합니다. 시뮬레이터에서 선수과목 없이 추가하려 하면 오류가 표시됩니다.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. "학점초과" 경고가 뜨는데 어떻게 해야 하나요?</div>
+    과목에 설정된 학년/학기 기준으로 같은 학기에 등록한 학점 합계가 최대 허용 학점(2024년: 18학점, 2023년 이전: 20학점)을 초과할 때 표시됩니다. 실제로 초과 수강 신청이 된 경우 학과 사무실에 확인하세요.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 자유선택 학점을 채우기 어려워요</div>
+    GradPath에는 체육활동(FR001)·봉사활동(FR002) 2개의 자선 과목만 등록되어 있습니다. 실제로는 타 학과 과목, 교양 초과 이수 학점 등이 자선으로 산입되므로, 과목을 모두 입력하기 어려운 경우 참고용으로만 활용하세요.
+  </div>
+
+  <div class="card">
+    <div class="card-title">Q. 과목이 목록에 없어요 <span class="badge-warn">한계</span></div>
+    GradPath에는 총 56개 과목이 등록되어 있습니다. 계명대 전체 과목 수에 비하면 일부만 포함된 것이며, 목록에 없는 과목은 반영할 수 없습니다. 수강 계획 확정은 학과 사무실 또는 수강신청 시스템을 이용하세요.
+  </div>
+
+  <hr />
+
+  <div style="text-align:center; color:#9ca3af; font-size:11px; padding: 32px 0 16px;">
+    GradPath · 계명대학교 컴퓨터공학과 졸업요건 시뮬레이터<br>
+    https://gradpath-phi.vercel.app · GitHub: Yeon-Duuu/2026GradPath<br>
+    <span style="margin-top:6px;display:block;">본 문서는 참고용이며, 최종 졸업 요건 확인은 학과 사무실에서 진행하세요.</span>
+  </div>
+
+</div>
+</body>
+</html>
