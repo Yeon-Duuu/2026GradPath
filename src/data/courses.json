@@ -1,65 +1,9435 @@
 {
-  "31960": { "name": "대학생활과진로설계", "credits": 1, "type": "전필", "year": 1, "semester": 1, "prerequisites": [] },
-  "34412": { "name": "컴퓨터공학캡스톤디자인(1)", "credits": 3, "type": "전필", "year": 3, "semester": 2, "prerequisites": ["14551"] },
-  "34981": { "name": "컴퓨터공학캡스톤디자인(2)", "credits": 3, "type": "전필", "year": 4, "semester": 1, "prerequisites": ["34412"] },
-
-  "20616": { "name": "C프로그래밍", "credits": 3, "type": "전선", "year": 1, "semester": 1, "prerequisites": [] },
-  "25500": { "name": "컴퓨터개론", "credits": 3, "type": "전선", "year": 1, "semester": 1, "prerequisites": [] },
-  "20613": { "name": "C++프로그래밍", "credits": 3, "type": "전선", "year": 1, "semester": 2, "prerequisites": ["20616"] },
-
-  "10708": { "name": "객체지향프로그래밍", "credits": 3, "type": "전선", "year": 2, "semester": 1, "prerequisites": [] },
-  "12147": { "name": "논리회로", "credits": 3, "type": "전선", "year": 2, "semester": 1, "prerequisites": [] },
-  "16003": { "name": "이산수학", "credits": 3, "type": "전선", "year": 2, "semester": 1, "prerequisites": [] },
-  "25502": { "name": "컴퓨터공학창의설계", "credits": 3, "type": "전선", "year": 2, "semester": 1, "prerequisites": [] },
-  "32823": { "name": "자료구조(1)", "credits": 3, "type": "전선", "year": 2, "semester": 1, "prerequisites": [] },
-  "20272": { "name": "자바프로그래밍", "credits": 3, "type": "전선", "year": 2, "semester": 2, "prerequisites": ["32823","20613"] },
-  "22017": { "name": "컴퓨터구조", "credits": 3, "type": "전선", "year": 2, "semester": 2, "prerequisites": ["12147","16003"] },
-  "32824": { "name": "자료구조(2)", "credits": 3, "type": "전선", "year": 2, "semester": 2, "prerequisites": ["32823"] },
-  "41180": { "name": "프로그래밍기초", "credits": 3, "type": "전선", "year": 2, "semester": 2, "prerequisites": [] },
-
-  "14551": { "name": "소프트웨어공학", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": [] },
-  "17735": { "name": "컴퓨터네트워크", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": [] },
-  "20923": { "name": "데이타베이스", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": [] },
-  "21598": { "name": "운영체제", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": ["22017"] },
-  "27760": { "name": "상업정보논리및논술", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": [] },
-  "28490": { "name": "웹어플리케이션구축", "credits": 3, "type": "전선", "year": 3, "semester": 1, "prerequisites": ["41180"] },
-  "18257": { "name": "프로그래밍언어론", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": [] },
-  "24288": { "name": "데이터베이스프로그래밍", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": ["20923"] },
-  "32822": { "name": "데이터통신", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": ["17735"] },
-  "37013": { "name": "컴퓨터(정보)교육론", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": ["27760"] },
-  "38323": { "name": "실감응용인공지능", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": [] },
-  "42446": { "name": "자동차인공지능", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": [] },
-  "44630": { "name": "수학기반인공지능프로그래밍", "credits": 3, "type": "전선", "year": 3, "semester": 2, "prerequisites": [] },
-
-  "14015": { "name": "상업정보교재연구및지도법", "credits": 2, "type": "전선", "year": 4, "semester": 1, "prerequisites": ["37013"] },
-  "23472": { "name": "시스템프로그래밍", "credits": 3, "type": "전선", "year": 4, "semester": 1, "prerequisites": [] },
-  "29651": { "name": "사전인턴십", "credits": 1, "type": "전선", "year": 4, "semester": 1, "prerequisites": [] },
-  "38327": { "name": "클라우드소프트웨어개발", "credits": 3, "type": "전선", "year": 4, "semester": 1, "prerequisites": [] },
-  "42447": { "name": "차량비전시스템", "credits": 3, "type": "전선", "year": 4, "semester": 1, "prerequisites": ["38323"] },
-  "44627": { "name": "소프트웨어테스팅", "credits": 3, "type": "전선", "year": 4, "semester": 1, "prerequisites": [] },
-  "44634": { "name": "알고리즘", "credits": 3, "type": "전선", "year": 4, "semester": 1, "prerequisites": [] },
-  "17742": { "name": "컴퓨터보안", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-  "22892": { "name": "디지털영상처리", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-  "36783": { "name": "최신정보기술세미나", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-  "41062": { "name": "빅데이터처리", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-  "41064": { "name": "AI기반영상정보처리", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-  "44626": { "name": "오픈소스프로그래밍", "credits": 3, "type": "전선", "year": 4, "semester": 2, "prerequisites": [] },
-
-  "GE001": { "name": "교양세미나와토론", "credits": 3, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE002": { "name": "기독교와계명인", "credits": 2, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE003": { "name": "글로벌시티즌십", "credits": 1, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE004": { "name": "COLLEGE ENGLISH", "credits": 3, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE005": { "name": "AI와컴퓨팅사고 (P/F)", "credits": 1, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE006": { "name": "스마트비즈니스와창업기초 (P/F)", "credits": 2, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-  "GE007": { "name": "채플 (P/F 필수)", "credits": 0, "type": "교필", "year": 1, "semester": 1, "prerequisites": [] },
-
-  "GE101": { "name": "철학의이해 [철학과역사]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-  "GE102": { "name": "사회학개론 [사회와문화]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-  "GE103": { "name": "과학기술의이해 [과학과기술]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-  "GE104": { "name": "문학의이해 [문학과예술]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-  "GE105": { "name": "글로벌리더십 [글로벌리더십]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-  "GE106": { "name": "진로탐색과설계 [진로·창업]", "credits": 3, "type": "교선", "year": 0, "semester": 0, "prerequisites": [] },
-
-  "FR001": { "name": "체육활동", "credits": 2, "type": "자선", "year": 0, "semester": 0, "prerequisites": [] },
-  "FR002": { "name": "봉사활동", "credits": 2, "type": "자선", "year": 0, "semester": 0, "prerequisites": [] }
+  "10036": {
+    "name": "A SURVEY OF CONTEMPORARY KOREAN ECONOMY(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "10150": {
+    "name": "CROSS-CULTURAL COMMUNICATION(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10162": {
+    "name": "EAST-ASIAN RELATIONS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "10271": {
+    "name": "INTERNATIONAL MANAGEMENT(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10350": {
+    "name": "KOREAN LANGUAGE PRACTICE(3)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10357": {
+    "name": "KOREAN ECONOMY(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10360": {
+    "name": "KOREAN GOVERNMENT & POLITICS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2025,
+      2026
+    ]
+  },
+  "10361": {
+    "name": "KOREAN HISTORY(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10363": {
+    "name": "KOREAN LANGUAGE PRACTICE(1)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10364": {
+    "name": "KOREAN LANGUAGE PRACTICE(2)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10497": {
+    "name": "TAE-KWON-DO(KOREAN TRADITIONAL MARTIAL ARTS) I",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "10514": {
+    "name": "THIRD WORLD POLITICS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2022
+    ]
+  },
+  "10708": {
+    "name": "객체지향프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "11118": {
+    "name": "공간과생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "11876": {
+    "name": "군사학(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "11878": {
+    "name": "군사학(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "11881": {
+    "name": "군사학(3)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "11883": {
+    "name": "군사학(4)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "12013": {
+    "name": "기술과인간생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "12135": {
+    "name": "노인교육개론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "12147": {
+    "name": "논리회로",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "12587": {
+    "name": "동양고전의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "14015": {
+    "name": "상업정보교재연구및지도법",
+    "credits": 2,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "14402": {
+    "name": "성인학습및상담론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "14551": {
+    "name": "소프트웨어공학",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "15263": {
+    "name": "여성교육개론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "15663": {
+    "name": "원격교육활용론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "16003": {
+    "name": "이산수학",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "16051": {
+    "name": "인간자원개발론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "16064": {
+    "name": "인공지능",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "17718": {
+    "name": "컴퓨터교육론",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "17735": {
+    "name": "컴퓨터네트워크",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "17742": {
+    "name": "컴퓨터보안",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "17746": {
+    "name": "컴퓨터알고리즘",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "18112": {
+    "name": "평생교육개론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "18113": {
+    "name": "평생교육경영학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "18116": {
+    "name": "평생교육방법론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "18117": {
+    "name": "평생교육프로그램개발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "18257": {
+    "name": "프로그래밍언어론",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "19663": {
+    "name": "인간관계및의사소통",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "19707": {
+    "name": "식품과건강",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "20272": {
+    "name": "자바프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": [
+      "32824"
+    ]
+  },
+  "20283": {
+    "name": "리눅스시스템",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "20438": {
+    "name": "INTRODUCTION TO KOREAN CULTURE(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "20441": {
+    "name": "숲과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "20468": {
+    "name": "THE FEATURES OF KOREAN TRADITIONAL FOODS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "20613": {
+    "name": "C++프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 1,
+    "semester": 2,
+    "prerequisites": [
+      "20616"
+    ]
+  },
+  "20616": {
+    "name": "C프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "20627": {
+    "name": "KOREAN DANCE(영어강의)",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "20710": {
+    "name": "경제성공학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20756": {
+    "name": "공연예술의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "20760": {
+    "name": "공학영어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20761": {
+    "name": "공학윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20762": {
+    "name": "과학과인간",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20860": {
+    "name": "기술과사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "20862": {
+    "name": "기술보고서작성법",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20866": {
+    "name": "기업교육론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "20923": {
+    "name": "데이타베이스",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "20977": {
+    "name": "디자인경영",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "21043": {
+    "name": "모바일프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "21201": {
+    "name": "비교문화론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "21234": {
+    "name": "사회봉사(1)",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21235": {
+    "name": "사회봉사(2)",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21272": {
+    "name": "생활과법률",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21280": {
+    "name": "생활일본어회화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21433": {
+    "name": "실용시사영어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "21508": {
+    "name": "영문강독",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "21598": {
+    "name": "운영체제",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "21619": {
+    "name": "유럽인의삶과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "21686": {
+    "name": "인간과윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "21694": {
+    "name": "인간성장발달",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21865": {
+    "name": "정치와시민생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "21951": {
+    "name": "직업선택과취업준비",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21987": {
+    "name": "초급독일어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "21995": {
+    "name": "초급일본어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21996": {
+    "name": "초급일본어(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21997": {
+    "name": "초급중국어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21998": {
+    "name": "초급중국어(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "21999": {
+    "name": "초급프랑스어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "22001": {
+    "name": "초급한문(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "22017": {
+    "name": "컴퓨터구조",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": [
+      "25500",
+      "12147"
+    ]
+  },
+  "22156": {
+    "name": "평생교육실습",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "22377": {
+    "name": "환경과인간",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "22434": {
+    "name": "컴퓨터활용",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "22441": {
+    "name": "해외문화엿보기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "22628": {
+    "name": "여성의평생건강관리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "22845": {
+    "name": "세계문화유산탐구",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "22892": {
+    "name": "디지털영상처리",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "22902": {
+    "name": "러시아문화탐방",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "22905": {
+    "name": "장래를위하여",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "22909": {
+    "name": "디자인의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "22912": {
+    "name": "수학의산책",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "23044": {
+    "name": "WORLD GEOGRAPHY",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2018,
+      2020,
+      2023,
+      2025
+    ]
+  },
+  "23167": {
+    "name": "연극과문화사",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "23472": {
+    "name": "시스템프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "23724": {
+    "name": "테크노경영시스템",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "23809": {
+    "name": "수학세계로의여행",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "23811": {
+    "name": "식물과웰빙",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "23962": {
+    "name": "BASIC MBA",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "24142": {
+    "name": "스포츠동작교실",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "24143": {
+    "name": "나노기술의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "24144": {
+    "name": "대중문화읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "24287": {
+    "name": "프로그래밍응용및실습",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "24288": {
+    "name": "데이터베이스프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": [
+      "20923"
+    ]
+  },
+  "24310": {
+    "name": "한국정치의쟁점과과제",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "24487": {
+    "name": "NEGOTIATION(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2022,
+      2023
+    ]
+  },
+  "24546": {
+    "name": "결혼,성과유전",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "24605": {
+    "name": "과학과기술의역사",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "24688": {
+    "name": "기술과경영",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "24689": {
+    "name": "기술과의사소통",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "24699": {
+    "name": "기초토익",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "24700": {
+    "name": "기초토플",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "24713": {
+    "name": "논리와비판적사고",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "24925": {
+    "name": "미술과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "25015": {
+    "name": "생활속의경제",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "25016": {
+    "name": "생활속의한자",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "25105": {
+    "name": "시사한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25150": {
+    "name": "실용한국어회화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "25195": {
+    "name": "여대생진로선택과커리어개발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "25235": {
+    "name": "영어토론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "25236": {
+    "name": "영작문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25332": {
+    "name": "인터넷사회와윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "25420": {
+    "name": "중국문화산책",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25486": {
+    "name": "취업전략과사회진출",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25500": {
+    "name": "컴퓨터개론",
+    "credits": 3,
+    "type": "전선",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "25501": {
+    "name": "컴퓨터공학세미나",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "25502": {
+    "name": "컴퓨터공학창의설계",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "25503": {
+    "name": "컴퓨터공학프로젝트",
+    "credits": 2,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "25504": {
+    "name": "컴퓨터공학학기인턴십",
+    "credits": 15,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "25609": {
+    "name": "한국어독해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "25615": {
+    "name": "한국어작문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25637": {
+    "name": "할리우드영화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "25646": {
+    "name": "혁신과경영",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25781": {
+    "name": "초급스페인어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "25800": {
+    "name": "BUSINESS APPLICATION",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "25801": {
+    "name": "CROSS CULTURAL COMMUNICATION",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "25920": {
+    "name": "조리와식품",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "26157": {
+    "name": "엑셀로배우는부자경제학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "26160": {
+    "name": "웹2.0시대의인터넷비지니스",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "26273": {
+    "name": "DIGIPEN ENGLISH(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "26274": {
+    "name": "DIGIPEN ENGLISH(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "26414": {
+    "name": "LINEAR ALGEBRA AND GEOMETRY(영어강의)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "26417": {
+    "name": "COMPOSITION(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "26425": {
+    "name": "SOCIETY AND TECHNOLOGY(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "26431": {
+    "name": "MOTION DYNAMICS(영어강의)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "26433": {
+    "name": "LINEAR ALGEBRA(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "26456": {
+    "name": "미디어정치의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "26468": {
+    "name": "자료해석과추리",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "26872": {
+    "name": "영상처리",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "27200": {
+    "name": "UNDERSTANDING WORK PLACE IN KOREA: HISTORY, CULTURE AND ECONOMY",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27263": {
+    "name": "THESIS WRITING",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "27274": {
+    "name": "초급이탈리아어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27293": {
+    "name": "질병의이해와관리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "27313": {
+    "name": "VECTOR CALCULUS I(영어강의)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "27314": {
+    "name": "VECTOR CALCULUS II(영어강의)",
+    "credits": 4,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "27710": {
+    "name": "음향예술",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2018,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27717": {
+    "name": "현대사회와윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "27718": {
+    "name": "현대인의삶과철학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "27726": {
+    "name": "국제관계속의한국의위상",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "27733": {
+    "name": "에너지와기후변화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "27734": {
+    "name": "역사와문명의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "27743": {
+    "name": "초급러시아어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27752": {
+    "name": "WORLD HISTORY",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "27753": {
+    "name": "WORLD RELIGION & CULTURE",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "27760": {
+    "name": "상업정보논리및논술",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "27793": {
+    "name": "현대건축명작의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27795": {
+    "name": "TAE-KWON-DO(KOREAN TRADITIONAL MARTIAL ARTS) II",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "27796": {
+    "name": "ACADEMIC WRITING I(KAC)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27798": {
+    "name": "COMMUNICATION SKILLS I(KAC)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "27885": {
+    "name": "컴퓨터공학캡스톤디자인",
+    "credits": 3,
+    "type": "전필",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "27906": {
+    "name": "CALCULUS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "28287": {
+    "name": "보건영양",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "28490": {
+    "name": "웹어플리케이션구축",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "29110": {
+    "name": "인간과동물(원광대)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "29115": {
+    "name": "전기와자기의이해(호남대)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "29185": {
+    "name": "다문화이민사회의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "29231": {
+    "name": "프리젠테이션제작",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "29232": {
+    "name": "자연과치유",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2021,
+      2022
+    ]
+  },
+  "29458": {
+    "name": "생태학과종교",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "29460": {
+    "name": "유비쿼터스와미래사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "29502": {
+    "name": "대학에서의학습전략",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "29770": {
+    "name": "CALCULUS",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2024,
+      2025
+    ]
+  },
+  "29947": {
+    "name": "INTERPERSONAL & WORK COMMUNICATION(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "29956": {
+    "name": "창업입문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "29957": {
+    "name": "지식기술창업실무1",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "29958": {
+    "name": "디자인창업실무1",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "29997": {
+    "name": "LISTENING SKILLS",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "30247": {
+    "name": "창업설계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "30249": {
+    "name": "지식기술창업실무2",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "30626": {
+    "name": "INTEGRATED ENGLISH SKILLS(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "30627": {
+    "name": "INTEGRATED ENGLISH SKILLS(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "30673": {
+    "name": "실전창업프로젝트1",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "30679": {
+    "name": "전통무예",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "30680": {
+    "name": "가야금(1)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "30681": {
+    "name": "가야금(2)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "30682": {
+    "name": "클래식기타(1)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "30683": {
+    "name": "클래식기타(2)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "30706": {
+    "name": "글로벌시대의이해와매너전략",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "30707": {
+    "name": "글로벌커뮤니케이션",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "30708": {
+    "name": "전통생태문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "30709": {
+    "name": "태권도와한국전통문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "30836": {
+    "name": "무대화술로푸는취업성공전략",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "30837": {
+    "name": "미국생활과문화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "30838": {
+    "name": "법과종교",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "31028": {
+    "name": "LAW AND CIVILIZATION",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2017,
+      2018,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "31183": {
+    "name": "클래식음악입문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2022,
+      2023
+    ]
+  },
+  "31184": {
+    "name": "악기와만나는음악세계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "31185": {
+    "name": "소중한것먼저하기",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018
+    ]
+  },
+  "31186": {
+    "name": "바다와배",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "31187": {
+    "name": "해외봉사와해외문화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "31188": {
+    "name": "무점포및1인재택창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "31203": {
+    "name": "섬유패션산업의글로벌시장진출",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "31207": {
+    "name": "CIE:창의,혁신과기업가정신",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "31212": {
+    "name": "한국전통문화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "31213": {
+    "name": "공모전의이해",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "31349": {
+    "name": "젠더와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "31505": {
+    "name": "컴퓨터공학인턴십(1)",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "31506": {
+    "name": "컴퓨터공학인턴십(2)",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "31733": {
+    "name": "예술치료와정신건강",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "31903": {
+    "name": "통합예술교육프로그램의이해",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "31904": {
+    "name": "문화행사기획",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "31905": {
+    "name": "예술교육상담",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "31960": {
+    "name": "대학생활과진로설계",
+    "credits": 1,
+    "type": "전필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "31963": {
+    "name": "자기탐색과경력개발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2019,
+      2020
+    ]
+  },
+  "31964": {
+    "name": "자기표현과연기예술",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "31965": {
+    "name": "스피치와토론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "31966": {
+    "name": "다문화사회와한국문화원형",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "31967": {
+    "name": "환경과식생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "31972": {
+    "name": "문예창작과표현",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016
+    ]
+  },
+  "31973": {
+    "name": "기초아랍어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "32380": {
+    "name": "창조경제와청년창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "32454": {
+    "name": "북한학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32455": {
+    "name": "국가안보론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32655": {
+    "name": "다문화사회와교육",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021
+    ]
+  },
+  "32821": {
+    "name": "WEB PAGE CONSTRUCTION(영어강의)",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "32822": {
+    "name": "데이터통신",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": [
+      "21598",
+      "17735"
+    ]
+  },
+  "32823": {
+    "name": "자료구조(1)",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "32824": {
+    "name": "자료구조(2)",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": [
+      "32823",
+      "16003"
+    ]
+  },
+  "32870": {
+    "name": "강대국의역사적비밀",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "32871": {
+    "name": "동양의지혜",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32872": {
+    "name": "라틴아메리카의역사와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32873": {
+    "name": "삶과죽음의철학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32875": {
+    "name": "생명감수성인큐베이팅",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32876": {
+    "name": "철학과역설의논리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "32877": {
+    "name": "한국의역사와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32878": {
+    "name": "한국전통사회의삶과민속",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32879": {
+    "name": "국제사회의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "32880": {
+    "name": "복잡계로이해하는현대사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32881": {
+    "name": "에코힐링",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32882": {
+    "name": "인간생활과언어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32883": {
+    "name": "디자인과공학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32884": {
+    "name": "생명과학과인간생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32885": {
+    "name": "생활과화학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "32886": {
+    "name": "인터넷사회와UCC",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32887": {
+    "name": "자료와정보",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32888": {
+    "name": "자연속의과학세상",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "32889": {
+    "name": "정보기술과미래사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32890": {
+    "name": "행복의생명과학적이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32891": {
+    "name": "감성국악체험",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32892": {
+    "name": "교양합창",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "32893": {
+    "name": "그림읽기로세상보기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32894": {
+    "name": "동양시문학의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32895": {
+    "name": "문학과삶",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32896": {
+    "name": "비주얼미디어를통해본영미문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32897": {
+    "name": "서양문학으로소통하기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32898": {
+    "name": "시와예술의만남",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "32899": {
+    "name": "신화와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32900": {
+    "name": "예술작품과음악의만남",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "32901": {
+    "name": "우화와영화를통한생각과상상력연습",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "32902": {
+    "name": "현대미술과인간",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32903": {
+    "name": "세계의민족과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32904": {
+    "name": "호모엠파티쿠스:글로벌인재의조건",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2018
+    ]
+  },
+  "32905": {
+    "name": "재미있는진로선택-내인생의네비게이션",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "32924": {
+    "name": "시각예술기획,제작및시현",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "32925": {
+    "name": "공연예술기획,제작및시연",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "32926": {
+    "name": "FAMILY AND GENDER RELATIONS IN UNDERSTANDING KOREAN SOCIETY",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "33055": {
+    "name": "실크로드의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "33056": {
+    "name": "사회적기업과적정기술",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "33081": {
+    "name": "일반생물학(간호학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "33082": {
+    "name": "일반화학(간호학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "33083": {
+    "name": "인간심리의이해",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "33157": {
+    "name": "기초베트남어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "33158": {
+    "name": "현대의시민생활과법",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "33159": {
+    "name": "도덕적생활과노래의기쁨",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "33160": {
+    "name": "환대산업의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2017,
+      2018
+    ]
+  },
+  "33161": {
+    "name": "사이버문화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "33259": {
+    "name": "융합인재교육세미나",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "33290": {
+    "name": "INTRODUCTION TO OBJECT ORIENTED PROGRAMMING(영어강의)",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "33291": {
+    "name": "COMPUTER SECURITY(영어강의)",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "33293": {
+    "name": "JAVA PROGRAMMING(영어강의)",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "33367": {
+    "name": "IT융합기술과활용",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2019,
+      2020
+    ]
+  },
+  "33368": {
+    "name": "스포츠의과학적이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020
+    ]
+  },
+  "33369": {
+    "name": "적정기술프로토타이핑",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "33370": {
+    "name": "증강현실로보는예술",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "33371": {
+    "name": "SciArt들여다보기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "33524": {
+    "name": "미술치료매체소개",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "33525": {
+    "name": "챠밍마사지요법",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "33698": {
+    "name": "과학기술윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2026
+    ]
+  },
+  "33699": {
+    "name": "정보탐색과활용",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "33700": {
+    "name": "인포그래픽과포토샵",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016
+    ]
+  },
+  "33701": {
+    "name": "THE  POLITICS OF KOREAN ECONOMIC DEVELOPMENT",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "33859": {
+    "name": "INTRODUCTION TO KOREAN FOLKLORE",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015
+    ]
+  },
+  "33860": {
+    "name": "TOPIK듣기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "33861": {
+    "name": "TOPIK쓰기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "33862": {
+    "name": "TOPIK읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "33863": {
+    "name": "비즈니스한국어(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "33864": {
+    "name": "비즈니스한국어(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "33865": {
+    "name": "현대사회와일그리고젠더",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "34028": {
+    "name": "컴퓨터공학창업현장실습(1)",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "34116": {
+    "name": "컴퓨터공학창업현장실습(2)",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "34207": {
+    "name": "컴퓨터공학학기창업현장실습",
+    "credits": 15,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "34412": {
+    "name": "컴퓨터공학캡스톤디자인(1)",
+    "credits": 3,
+    "type": "전필",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": [
+      "14551"
+    ]
+  },
+  "34437": {
+    "name": "국가안보와통일한국",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "34438": {
+    "name": "C++ PROGRAMMING(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017
+    ]
+  },
+  "34464": {
+    "name": "나를찾아떠나는세계문학여행",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "34465": {
+    "name": "동영학술림의생태와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "34466": {
+    "name": "기초터키어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2019,
+      2020
+    ]
+  },
+  "34468": {
+    "name": "ICT학점연계프로젝트인턴십",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "34574": {
+    "name": "소셜미디어창업설계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "34575": {
+    "name": "생각의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "34576": {
+    "name": "예비부모교육",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "34847": {
+    "name": "INTRODUCTION TO PHYSICS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "34981": {
+    "name": "컴퓨터공학캡스톤디자인(2)",
+    "credits": 3,
+    "type": "전필",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "35050": {
+    "name": "창의적문제해결협상론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "35143": {
+    "name": "문화예술교육개론",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "35144": {
+    "name": "문화예술교육현장의이해와실습",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "35177": {
+    "name": "미디어리터러시",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "35332": {
+    "name": "현대물리의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "35333": {
+    "name": "모델링과창의성개발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "35334": {
+    "name": "아름다운매너",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "35838": {
+    "name": "섬김의리더십과기독교윤리",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "35839": {
+    "name": "내안에서우리찾기",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "35840": {
+    "name": "국제사회와세계시민",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2024,
+      2025
+    ]
+  },
+  "35841": {
+    "name": "과학과인성",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "35842": {
+    "name": "현대사회와교통문화",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "35843": {
+    "name": "타불라라사세미나",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018
+    ]
+  },
+  "35844": {
+    "name": "아카데믹한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "35895": {
+    "name": "컴퓨터공학현장실습(1)",
+    "credits": 3,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "36130": {
+    "name": "컴퓨터공학학기현장실습",
+    "credits": 15,
+    "type": "전선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "36171": {
+    "name": "창업모델설계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "36172": {
+    "name": "기술창업실무(2)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "36174": {
+    "name": "IOT창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "36175": {
+    "name": "창업아이템개발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "36176": {
+    "name": "예술문화창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "36177": {
+    "name": "기업가정신과창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "36178": {
+    "name": "글로벌창업사례",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "36179": {
+    "name": "캠퍼스CEO",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017,
+      2019
+    ]
+  },
+  "36180": {
+    "name": "글로벌벤처육성과청년창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016
+    ]
+  },
+  "36516": {
+    "name": "TV프로그램만들기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2016,
+      2017
+    ]
+  },
+  "36783": {
+    "name": "최신정보기술세미나",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "36848": {
+    "name": "실시간시스템",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "37005": {
+    "name": "MOTIONDYNAMICSLAB(영어과목)",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "37013": {
+    "name": "컴퓨터(정보)교육론",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": [
+      "27760"
+    ]
+  },
+  "37014": {
+    "name": "프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 1,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "37067": {
+    "name": "글로벌창업실전",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37068": {
+    "name": "기술사업화창업이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37069": {
+    "name": "소셜미디어창업이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37070": {
+    "name": "예술문화창업프로젝트",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37071": {
+    "name": "창업회계입문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017
+    ]
+  },
+  "37072": {
+    "name": "문화한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37244": {
+    "name": "세계화와글로벌사회문제",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "37255": {
+    "name": "세계의지역과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018
+    ]
+  },
+  "37320": {
+    "name": "운동과웰빙",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37321": {
+    "name": "자기경영노트",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018
+    ]
+  },
+  "37322": {
+    "name": "행정학길라잡이",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018
+    ]
+  },
+  "37323": {
+    "name": "벤처테크노경영",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017
+    ]
+  },
+  "37553": {
+    "name": "행복의인문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37584": {
+    "name": "실크로드와종교교류",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017
+    ]
+  },
+  "37596": {
+    "name": "생태문학의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37597": {
+    "name": "우리문화유전자읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37599": {
+    "name": "서사의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37606": {
+    "name": "영화로읽는인문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "37607": {
+    "name": "매체를통한세계신화여행",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37608": {
+    "name": "논리와윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37610": {
+    "name": "언어와문화생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37611": {
+    "name": "커뮤니케이션과문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "37623": {
+    "name": "외국국어교과서로창의적문화읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "37624": {
+    "name": "미디어와한국학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37625": {
+    "name": "한국학고전읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37626": {
+    "name": "융합사회와윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018
+    ]
+  },
+  "37693": {
+    "name": "계명기업가정신",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "37694": {
+    "name": "창업의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "37853": {
+    "name": "기초폴란드어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2019
+    ]
+  },
+  "38028": {
+    "name": "STARTUP을위한창의적문제해결",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2017,
+      2018,
+      2023,
+      2024
+    ]
+  },
+  "38322": {
+    "name": "실감프로그램응용및실습",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "38323": {
+    "name": "실감응용인공지능",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "38324": {
+    "name": "실감응용데이터베이스프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "38327": {
+    "name": "클라우드소프트웨어개발",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": [
+      "32822"
+    ]
+  },
+  "38332": {
+    "name": "실용자바프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "38333": {
+    "name": "실용프로그래밍언어론",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "38436": {
+    "name": "창업회계와자금조달",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "38441": {
+    "name": "베이직잉글리시톡",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38448": {
+    "name": "기술과경영마인드",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "38454": {
+    "name": "생활속의미생물",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "38455": {
+    "name": "기후변화와미래사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38456": {
+    "name": "디자인씽킹과창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38457": {
+    "name": "글로벌식품문화와과학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38458": {
+    "name": "FUTURE TRENDS",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38459": {
+    "name": "생체인공지능과미래사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "38460": {
+    "name": "인체속의인문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "38461": {
+    "name": "도시환경과조경",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "38462": {
+    "name": "책으로사람을연출하다:텍스트드라마를통한인성교육",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38463": {
+    "name": "시사로보는정치",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "38464": {
+    "name": "디자인인문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38465": {
+    "name": "색채와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38466": {
+    "name": "생활과실내디자인",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "38467": {
+    "name": "언어로보는사회와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38468": {
+    "name": "사회적경제의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018
+    ]
+  },
+  "38469": {
+    "name": "미래를열어가는리더십",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38470": {
+    "name": "플랫폼창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019
+    ]
+  },
+  "38471": {
+    "name": "나-우리-미래:aCUA",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38472": {
+    "name": "프로토타이핑",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020
+    ]
+  },
+  "38473": {
+    "name": "퍼스널트레이닝",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "38474": {
+    "name": "21세기중국사회의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38475": {
+    "name": "생활속세금이야기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38476": {
+    "name": "우주탐험과우주본질의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "38477": {
+    "name": "글로벌도시와창의적리더",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020
+    ]
+  },
+  "38493": {
+    "name": "인성의과학적이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38494": {
+    "name": "TRAVEL AND HAPPINESS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38543": {
+    "name": "한국의다문화현상과이민",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38619": {
+    "name": "4대패권국가의역사적비밀",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2022
+    ]
+  },
+  "38620": {
+    "name": "독도와한국의국경",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "38621": {
+    "name": "현대라틴아메리카의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "38622": {
+    "name": "꿈의해석과심리의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "38623": {
+    "name": "과학소설(SF)로떠나는상상여행",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "38624": {
+    "name": "르네상스의재발견",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "38625": {
+    "name": "문학과영화를통한인성함양",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "38635": {
+    "name": "행복한삶과가족",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "38636": {
+    "name": "파워풀클래식인문학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "39001": {
+    "name": "커뮤니티디자인",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "39004": {
+    "name": "4차산업혁명기술이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "39085": {
+    "name": "사례를통한동아시아진출기업이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "39095": {
+    "name": "글로벌여행과호텔디자인",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "39096": {
+    "name": "생활속의금융",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "39234": {
+    "name": "거꾸로보는미디어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2018,
+      2019,
+      2020
+    ]
+  },
+  "39954": {
+    "name": "미래산업과청년창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "40012": {
+    "name": "건강한피부이야기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40013": {
+    "name": "건강과사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40014": {
+    "name": "대학생활과영어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40015": {
+    "name": "이미지와영상으로풀어보는전쟁과인간",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40016": {
+    "name": "사회혁신과시장생태계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40027": {
+    "name": "지구와재해의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40028": {
+    "name": "재미있는대인관계심리학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40029": {
+    "name": "사용하기편한디자인",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019
+    ]
+  },
+  "40030": {
+    "name": "생각의차이",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40031": {
+    "name": "21세기생물자원활용",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "40032": {
+    "name": "동양고전의인문학적지혜",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40033": {
+    "name": "영화로보는도시건축",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40034": {
+    "name": "세계도시건축의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40035": {
+    "name": "문화예술이숨쉬는유럽",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "40039": {
+    "name": "국어현상과통계분석",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40040": {
+    "name": "재미와게임",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40041": {
+    "name": "논리적사고의기초",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024
+    ]
+  },
+  "40042": {
+    "name": "비언어커뮤니케이션",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40043": {
+    "name": "디지털콘텐츠와스타트업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40044": {
+    "name": "대학생을위한현대미술읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40046": {
+    "name": "웰빙과웰다잉의과학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "40047": {
+    "name": "힐링시대건강이야기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40048": {
+    "name": "대중매체와식생활정보",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40049": {
+    "name": "디지털미디어와사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40050": {
+    "name": "철학으로묻고답하기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "40051": {
+    "name": "빅데이터이해와감성적분석의활용",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40052": {
+    "name": "세계속의한국학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2022,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40053": {
+    "name": "소비와행복",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40062": {
+    "name": "대학글쓰기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40063": {
+    "name": "대구경북지역학개론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "40064": {
+    "name": "현대중국의사회와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "40065": {
+    "name": "21세기중국의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40066": {
+    "name": "비판적세계시민과글로벌인성",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020
+    ]
+  },
+  "40067": {
+    "name": "드라마와미디어산업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019
+    ]
+  },
+  "40068": {
+    "name": "미술과사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020
+    ]
+  },
+  "40069": {
+    "name": "한일시가와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "40070": {
+    "name": "영상으로보는한국사",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40071": {
+    "name": "한국고전문학과전통문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40072": {
+    "name": "안보학(군사학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40073": {
+    "name": "안전및조직관리사례연구(군사학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40074": {
+    "name": "조직리더십(군사학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40075": {
+    "name": "조직리더십사례연구(군사학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40635": {
+    "name": "뉴스와창의력",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40645": {
+    "name": "사회적이슈를통한소통과토론",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2024
+    ]
+  },
+  "40646": {
+    "name": "새로운생명체인공지능",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "40648": {
+    "name": "평생학습을위한창업과기업가정신",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40649": {
+    "name": "세계와인과문화의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40650": {
+    "name": "영화와만난커뮤니케이션",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40651": {
+    "name": "세계뮤지컬의이해와감상",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40657": {
+    "name": "빅데이터수학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "40658": {
+    "name": "서양지성사",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "40662": {
+    "name": "글로벌시대의공공외교",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "40669": {
+    "name": "식품보건과스타트업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021
+    ]
+  },
+  "40673": {
+    "name": "CONCEPTS SHAPING CITIES(영어과목)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2022,
+      2023
+    ]
+  },
+  "40674": {
+    "name": "국제개발협력의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "40675": {
+    "name": "문학콘텐츠와응용예술",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "40677": {
+    "name": "채식주의",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "41060": {
+    "name": "IOT프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "41062": {
+    "name": "빅데이터처리",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": [
+      "44634"
+    ]
+  },
+  "41064": {
+    "name": "AI기반영상정보처리",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 2,
+    "prerequisites": [
+      "42447"
+    ]
+  },
+  "41180": {
+    "name": "프로그래밍기초",
+    "credits": 3,
+    "type": "전선",
+    "year": 2,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "41321": {
+    "name": "나무와선비문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "41322": {
+    "name": "영남유학을찾아서떠나는서원기행",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "41323": {
+    "name": "영화속숨겨진의미읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "41324": {
+    "name": "고고학의세계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "41325": {
+    "name": "한끼의권리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022
+    ]
+  },
+  "41529": {
+    "name": "문화예술로이해하는경영과회계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "41536": {
+    "name": "인문데이터분석기초프로그래밍",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "41537": {
+    "name": "게임으로배우는컴퓨팅사고",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "41539": {
+    "name": "파이썬으로배우는문제해결",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "41541": {
+    "name": "진로선택과자기계발",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "41765": {
+    "name": "국제사회속의한반도통일과남북협력",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2020
+    ]
+  },
+  "42207": {
+    "name": "인공지능과법정책",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42208": {
+    "name": "텍스트데이터처리입문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021
+    ]
+  },
+  "42209": {
+    "name": "핀테크와스마트금융",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021
+    ]
+  },
+  "42210": {
+    "name": "태권도와공연예술",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42215": {
+    "name": "세계화와국제지역의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42216": {
+    "name": "국제지역의이슈와쟁점",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42273": {
+    "name": "감정이해와철학적치유",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42274": {
+    "name": "유라시아여행기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023
+    ]
+  },
+  "42275": {
+    "name": "인공지능디자인",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42276": {
+    "name": "첨단산업미래기술의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42277": {
+    "name": "영상번역으로영어마스터",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "42302": {
+    "name": "수학으로인문학읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42303": {
+    "name": "비주얼컬처의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022
+    ]
+  },
+  "42305": {
+    "name": "통일한국과동질성회복",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021
+    ]
+  },
+  "42320": {
+    "name": "공감과환대의윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "42362": {
+    "name": "건강육아레시피",
+    "credits": 1,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022
+    ]
+  },
+  "42363": {
+    "name": "디자인과창의성",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "42364": {
+    "name": "패션과이미지메이킹",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022
+    ]
+  },
+  "42393": {
+    "name": "한반도통일과주변국",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021
+    ]
+  },
+  "42446": {
+    "name": "자동차인공지능",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "42447": {
+    "name": "차량비전시스템",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "42459": {
+    "name": "메타버스의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022
+    ]
+  },
+  "42460": {
+    "name": "미래자동차혁명(공유)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42757": {
+    "name": "간호정보입문",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "42765": {
+    "name": "일반생물및화학(간호학)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42813": {
+    "name": "이미지텍스트의이해와읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42814": {
+    "name": "문학으로보는유토피아와디스토피아",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42815": {
+    "name": "인간감성으로풀어보는행동경제이야기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42816": {
+    "name": "소설창작과문화콘텐츠기획",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022
+    ]
+  },
+  "42824": {
+    "name": "다문화사회세계시민역량과교육",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023
+    ]
+  },
+  "42825": {
+    "name": "애니메이션과자기발견",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42826": {
+    "name": "자기긍정을위한글쓰기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42827": {
+    "name": "인간과세상을연결하는실감미디어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "42828": {
+    "name": "건강복지와헬스케어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "42829": {
+    "name": "융합사회와미래예측",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43000": {
+    "name": "영남학과지방학",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023
+    ]
+  },
+  "43001": {
+    "name": "흥망으로본한국사",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023
+    ]
+  },
+  "43002": {
+    "name": "공공사회와공직가치",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "43003": {
+    "name": "어플리케이션과이미지속의회계원리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "43004": {
+    "name": "CNN뉴스청취와독해연습",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2022,
+      2023
+    ]
+  },
+  "43471": {
+    "name": "영화로보는나노기술과나노융합산업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43472": {
+    "name": "ESG경영의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43473": {
+    "name": "CONTEMPORARY SOCIETY AND CULTURAL ISSUES IN KOREA(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023
+    ]
+  },
+  "43474": {
+    "name": "슬기로운진로선택창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43475": {
+    "name": "미래산업창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43476": {
+    "name": "크라우드펀딩과창업",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2026
+    ]
+  },
+  "43477": {
+    "name": "로컬창업앳대구",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43478": {
+    "name": "창업고수비법노트",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43479": {
+    "name": "생각하는기계인공지능",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43480": {
+    "name": "글로벌경제사로이해하는4차산업혁명",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "43481": {
+    "name": "실크로드신과영웅이야기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43622": {
+    "name": "미술심리이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023
+    ]
+  },
+  "43725": {
+    "name": "잘실패하는법",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "43726": {
+    "name": "사례를통해서배우는갈등해결의지혜",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "43957": {
+    "name": "소프트웨어특강(교류)",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024
+    ]
+  },
+  "44136": {
+    "name": "아시아생활문화탐구",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023
+    ]
+  },
+  "44137": {
+    "name": "사람과세상을이해하는고전문학읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44138": {
+    "name": "누구나할수있는SW기초개발자코스",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44630": {
+    "name": "수학기반인공지능프로그래밍",
+    "credits": 3,
+    "type": "전선",
+    "year": 3,
+    "semester": 2,
+    "prerequisites": []
+  },
+  "44634": {
+    "name": "알고리즘",
+    "credits": 3,
+    "type": "전선",
+    "year": 4,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "44649": {
+    "name": "퍼스널브랜딩과이미지메이킹",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44650": {
+    "name": "생활속의창의적문제해결",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44651": {
+    "name": "인문학적으로본중국식문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44652": {
+    "name": "사람의마음을움직이는리더십",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44653": {
+    "name": "미디어로세상읽기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44654": {
+    "name": "AI와비주얼콘텐츠실습",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "44655": {
+    "name": "합창과연주",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44656": {
+    "name": "고전에서배우는삶의지혜",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2026
+    ]
+  },
+  "44657": {
+    "name": "HISTORY OF ECONOMIC THOUGHT(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024
+    ]
+  },
+  "44658": {
+    "name": "AI시대맥킨지식문제해결",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44659": {
+    "name": "디지털시대의경영트렌드",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "44660": {
+    "name": "테크놀로지분쟁의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024
+    ]
+  },
+  "44661": {
+    "name": "부동산거래와건강한경제생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44662": {
+    "name": "범죄와도덕적가치",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44663": {
+    "name": "31가지창의적인아이디어발상법",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44664": {
+    "name": "장르문학으로바라본미래",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44665": {
+    "name": "글로벌영어와문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44666": {
+    "name": "비주얼미디어와잉글리시커뮤니케이션",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44667": {
+    "name": "글로컬실용영어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44668": {
+    "name": "팝송으로배우는영어세계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44669": {
+    "name": "중국의혁신기업과기업가정신",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44670": {
+    "name": "사례로이해하는ESG경영",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44671": {
+    "name": "국제지역학디지털현장학습",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "44683": {
+    "name": "돌봄인문학",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44684": {
+    "name": "글로벌헬스",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "44753": {
+    "name": "세계시민을위한다문화교육",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44775": {
+    "name": "대구경북의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "44810": {
+    "name": "신국제질서와한반도평화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025
+    ]
+  },
+  "45237": {
+    "name": "글로벌시대다른나라다른삶",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "45731": {
+    "name": "세계사와대한민국",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45732": {
+    "name": "현대일본과대중문화",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45733": {
+    "name": "AI시대대학생에듀테크활용전략",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45734": {
+    "name": "데이터리터러시와인공지능의기초",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45735": {
+    "name": "AI & SOFT SKILLS(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025
+    ]
+  },
+  "45736": {
+    "name": "중국유머의언어학적이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45737": {
+    "name": "독일산책-언어와문화개관",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45738": {
+    "name": "실패를통한자기발견",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45739": {
+    "name": "사회초년생의행복한경제생활",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45740": {
+    "name": "K-콘텐츠와시의언어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45741": {
+    "name": "자기관리와정신건강",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45743": {
+    "name": "COMMUNICATION MASTERY IN THE DIGITAL AGE(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45781": {
+    "name": "일상속마케팅이해하기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45782": {
+    "name": "현대라틴아메리카의사회문제와해결방안",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45801": {
+    "name": "AI와인간",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "45865": {
+    "name": "대구청년인문학아카데미(1)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "46168": {
+    "name": "CYBERSECURITY",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025
+    ]
+  },
+  "46169": {
+    "name": "DIGITAL TRANSFORMATION",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025
+    ]
+  },
+  "46170": {
+    "name": "IT MANAGEMENT",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46257": {
+    "name": "IT한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "46258": {
+    "name": "NCS한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "46259": {
+    "name": "대구생활한국어",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2025,
+      2026
+    ]
+  },
+  "46565": {
+    "name": "한일커뮤니케이션의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46566": {
+    "name": "현대정치의이해",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46567": {
+    "name": "콘텐츠로배우는공직윤리",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46568": {
+    "name": "건강한삶을위한생활설계",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46569": {
+    "name": "질병의이해와건강증진",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46570": {
+    "name": "인문학으로인체이해하기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46571": {
+    "name": "동물과인간그리고사회",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46592": {
+    "name": "포용의교육을위한21세기교실과세계시민성",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46593": {
+    "name": "공무원의세계이해하기",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46618": {
+    "name": "AI & DEEP LEARNING(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46619": {
+    "name": "BUSINESS PROGRAMMING(영어강의)",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46628": {
+    "name": "한반도평화와사회통합",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46631": {
+    "name": "대구창업학",
+    "credits": 2,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "46632": {
+    "name": "마이플랜테리어라이프",
+    "credits": 3,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2026
+    ]
+  },
+  "GE001": {
+    "name": "교양세미나와토론",
+    "credits": 3,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE002": {
+    "name": "기독교와계명인",
+    "credits": 2,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE003": {
+    "name": "글로벌시티즌십",
+    "credits": 1,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE004": {
+    "name": "COLLEGE ENGLISH",
+    "credits": 3,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE005": {
+    "name": "AI와컴퓨팅사고 (P/F)",
+    "credits": 1,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE006": {
+    "name": "스마트비즈니스와창업기초 (P/F)",
+    "credits": 2,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "GE007": {
+    "name": "채플 (P/F 필수)",
+    "credits": 0,
+    "type": "교필",
+    "year": 1,
+    "semester": 1,
+    "prerequisites": []
+  },
+  "FR001": {
+    "name": "체육활동",
+    "credits": 2,
+    "type": "자선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "FR002": {
+    "name": "봉사활동",
+    "credits": 2,
+    "type": "자선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": []
+  },
+  "nan": {
+    "name": "nan",
+    "credits": 0,
+    "type": "교선",
+    "year": 0,
+    "semester": 0,
+    "prerequisites": [],
+    "openYears": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  }
 }

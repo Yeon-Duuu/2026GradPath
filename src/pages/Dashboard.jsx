@@ -167,13 +167,18 @@ export default function Dashboard() {
 
   const filteredAddCourses = useMemo(() => {
     const q = courseQuery.trim().toLowerCase()
+    const admYear = parseInt(state.admissionYear)
     return Object.entries(allCourses).filter(([id, course]) => {
       if (state.completedCourses.includes(id)) return false
       if (courseTypeFilter !== '전체' && course.type !== courseTypeFilter) return false
+      if (course.type === '교선' && course.openYears) {
+        if (!course.openYears.includes(admYear)) return false
+        if (!q && courseTypeFilter !== '교선') return false
+      }
       if (!q) return true
       return course.name.toLowerCase().includes(q) || id.includes(q) || course.type.includes(q)
     })
-  }, [allCourses, state.completedCourses, courseQuery, courseTypeFilter])
+  }, [allCourses, state.completedCourses, courseQuery, courseTypeFilter, state.admissionYear])
 
   const isFirstVisit = state.completedCourses.length === 0 && !state.studentId
 
@@ -410,7 +415,13 @@ export default function Dashboard() {
 
           {filteredAddCourses.length === 0 ? (
             <p className="text-xs text-gray-300 py-2">
-              {courseQuery.trim() ? '검색 결과가 없습니다' : '모든 과목을 이수했습니다'}
+              {courseQuery.trim()
+                ? '검색 결과가 없습니다'
+                : courseTypeFilter === '교선'
+                  ? '해당 입학년도에 개설된 교선 과목이 없습니다'
+                  : courseTypeFilter === '전체'
+                    ? '과목명 또는 코드를 검색하거나 교선 탭을 선택하세요'
+                    : '모든 과목을 이수했습니다'}
             </p>
           ) : (
             <div className="flex flex-wrap gap-1.5 max-h-52 overflow-y-auto pr-1">
