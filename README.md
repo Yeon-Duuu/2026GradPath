@@ -40,5 +40,3 @@ git add <파일들>
 git commit -m "커밋 메시지"
 git push origin master   # Vercel 자동 재배포
 ```
-
-> `.gitignore`에 `CLAUDE.md`, `.claude/` 등록 — 로컬에만 유지됨
