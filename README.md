@@ -16,7 +16,7 @@
 
 ## 졸업 요건
 
-2026 학과 생활 가이드북 기반 실데이터. 2010~2026학년도 입학생 지원.
+2026 학과 생활 가이드북 기반 실데이터. 2015~2026학년도 입학생 지원.
 
 ## 기술 스택
 
@@ -37,8 +37,8 @@ npm run dev
 
 ```bash
 git add <파일들>
-git commit --amend --no-edit
-git push --force origin master   # Vercel 자동 재배포 (커밋 1개 유지)
+git commit -m "커밋 메시지"
+git push origin master   # Vercel 자동 재배포
 ```
 
 > `.gitignore`에 `CLAUDE.md`, `.claude/` 등록 — 로컬에만 유지됨
