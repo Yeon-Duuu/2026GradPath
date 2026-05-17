@@ -154,6 +154,17 @@ export default function Simulator() {
         )}
       </div>
 
+      {simulatedCourses.length === 0 && !searchQuery && (
+        <div className="border border-blue-100 bg-blue-50/40 rounded-md px-4 py-3">
+          <p className="text-xs font-medium text-blue-600 mb-1">이렇게 사용해보세요</p>
+          <ol className="space-y-0.5 text-xs text-blue-500 list-decimal list-inside">
+            <li>왼쪽 검색창에서 수강 예정 과목을 찾아 <span className="font-medium">+ 추가</span> 클릭</li>
+            <li>오른쪽에서 졸업 가능 여부와 영역별 학점 변화 확인</li>
+            <li>이미 이수한 과목은 대시보드에서 먼저 추가해주세요</li>
+          </ol>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
         {/* Left: Course list */}
         <div className="lg:col-span-3 space-y-3">

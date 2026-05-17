@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { collection, onSnapshot, deleteDoc, addDoc, doc, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import roadmapsData from '@/data/roadmaps.json'
@@ -21,6 +21,7 @@ function AdminAddModal({ onClose }) {
   const [activities, setActivities] = useState('')
   const [companies, setCompanies] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   function toArray(str) { return str.split('\n').map(s => s.trim()).filter(Boolean) }
   function toCommaSplit(str) { return str.split(/[\n,]/).map(s => s.trim()).filter(Boolean) }
@@ -47,7 +48,7 @@ function AdminAddModal({ onClose }) {
       })
       onClose()
     } catch {
-      alert('로드맵 등록에 실패했습니다.')
+      setSubmitError('로드맵 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
       setSubmitting(false)
     }
   }
@@ -118,12 +119,17 @@ function AdminAddModal({ onClose }) {
           </div>
         </form>
 
-        <div className="flex justify-end gap-2 px-5 py-3 border-t border-gray-100 flex-shrink-0">
-          <button type="button" onClick={onClose} className="px-3 py-1.5 text-xs text-gray-500 border border-gray-200 rounded-md hover:bg-gray-50">취소</button>
-          <button onClick={handleSubmit} disabled={!name.trim() || submitting}
-            className="px-4 py-1.5 text-xs font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 disabled:opacity-40">
-            {submitting ? '등록 중...' : '등록'}
-          </button>
+        <div className="px-5 py-3 border-t border-gray-100 flex-shrink-0">
+          {submitError && (
+            <p className="text-xs text-red-500 mb-2 text-right">{submitError}</p>
+          )}
+          <div className="flex justify-end gap-2">
+            <button type="button" onClick={onClose} className="px-3 py-1.5 text-xs text-gray-500 border border-gray-200 rounded-md hover:bg-gray-50">취소</button>
+            <button onClick={handleSubmit} disabled={!name.trim() || submitting}
+              className="px-4 py-1.5 text-xs font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 disabled:opacity-40">
+              {submitting ? '등록 중...' : '등록'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -248,6 +254,8 @@ export default function Roadmap() {
   const [adminLoadError, setAdminLoadError] = useState(false)
   const [showAdminAdd, setShowAdminAdd] = useState(false)
   const [pendingDeleteId, setPendingDeleteId] = useState(null)
+  const [deleteError, setDeleteError] = useState('')
+  const deleteErrorTimer = useRef(null)
   const [savedPlan, setSavedPlan] = useState(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY)
@@ -308,7 +316,9 @@ export default function Roadmap() {
         setSavedPlan(null)
       }
     } catch {
-      alert('삭제에 실패했습니다.')
+      setDeleteError('삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
+      if (deleteErrorTimer.current) clearTimeout(deleteErrorTimer.current)
+      deleteErrorTimer.current = setTimeout(() => setDeleteError(''), 3000)
     }
   }
 
@@ -358,6 +368,12 @@ export default function Roadmap() {
 
       {adminLoadError && (
         <p className="text-xs text-red-400 text-center py-2">관리자 로드맵을 불러오지 못했습니다.</p>
+      )}
+
+      {deleteError && (
+        <div className="px-3 py-2 bg-red-50 border border-red-100 rounded-md">
+          <p className="text-xs text-red-500">{deleteError}</p>
+        </div>
       )}
 
       {filtered.length === 0 ? (

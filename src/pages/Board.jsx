@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   collection, addDoc, onSnapshot, doc,
@@ -54,6 +54,7 @@ function RoadmapRegisterModal({ post, onClose }) {
   const [activities, setActivities] = useState(autoActivities)
   const [companies, setCompanies] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   function toArray(str) {
     return str.split('\n').map(s => s.trim()).filter(Boolean)
@@ -84,7 +85,7 @@ function RoadmapRegisterModal({ post, onClose }) {
       })
       onClose()
     } catch {
-      alert('로드맵 등록에 실패했습니다.')
+      setSubmitError('로드맵 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
       setSubmitting(false)
     }
   }
@@ -177,7 +178,11 @@ function RoadmapRegisterModal({ post, onClose }) {
           </div>
         </form>
 
-        <div className="flex justify-end gap-2 px-5 py-3 border-t border-gray-100 flex-shrink-0">
+        <div className="px-5 py-3 border-t border-gray-100 flex-shrink-0">
+          {submitError && (
+            <p className="text-xs text-red-500 mb-2 text-right">{submitError}</p>
+          )}
+          <div className="flex justify-end gap-2">
           <button type="button" onClick={onClose} className="px-3 py-1.5 text-xs text-gray-500 border border-gray-200 rounded-md hover:bg-gray-50">
             취소
           </button>
@@ -188,6 +193,7 @@ function RoadmapRegisterModal({ post, onClose }) {
           >
             {submitting ? '등록 중...' : '로드맵에 등록'}
           </button>
+          </div>
         </div>
       </div>
     </div>
@@ -303,6 +309,8 @@ export default function Board() {
   const [searchQuery, setSearchQuery] = useState('')
   const [pendingDelete, setPendingDelete] = useState(null)
   const [roadmapPost, setRoadmapPost] = useState(null)
+  const [deleteError, setDeleteError] = useState('')
+  const deleteErrorTimer = useRef(null)
 
   useEffect(() => {
     const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'))
@@ -338,18 +346,23 @@ export default function Board() {
     if (!pendingDelete) return
     const { type, postId, reply } = pendingDelete
     setPendingDelete(null)
+    function showDeleteError(msg) {
+      setDeleteError(msg)
+      if (deleteErrorTimer.current) clearTimeout(deleteErrorTimer.current)
+      deleteErrorTimer.current = setTimeout(() => setDeleteError(''), 3000)
+    }
     if (type === 'post') {
       try {
         await deleteDoc(doc(db, 'posts', postId))
         setSelectedPost(null)
       } catch {
-        alert('삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
+        showDeleteError('삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
       }
     } else {
       try {
         await updateDoc(doc(db, 'posts', postId), { replies: arrayRemove(reply) })
       } catch {
-        alert('댓글 삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
+        showDeleteError('댓글 삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
       }
     }
   }
@@ -389,6 +402,12 @@ export default function Board() {
           </button>
         )}
       </div>
+
+      {deleteError && (
+        <div className="mb-3 px-3 py-2 bg-red-50 border border-red-100 rounded-md">
+          <p className="text-xs text-red-500">{deleteError}</p>
+        </div>
+      )}
 
       <div className="mb-4">
         <input
