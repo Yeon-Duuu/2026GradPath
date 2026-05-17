@@ -113,11 +113,16 @@ export default function Simulator() {
 
   const filteredCourses = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
-    if (!q) return Object.entries(allCourses)
-    return Object.entries(allCourses).filter(([id, c]) =>
-      c.name.toLowerCase().includes(q) || id.toLowerCase().includes(q) || c.type.includes(q)
-    )
-  }, [searchQuery, allCourses])
+    const admYear = parseInt(state.admissionYear)
+    return Object.entries(allCourses).filter(([id, c]) => {
+      if (c.type === '교선' && c.openYears) {
+        if (!c.openYears.includes(admYear)) return false
+        if (!q) return false
+      }
+      if (!q) return true
+      return c.name.toLowerCase().includes(q) || id.toLowerCase().includes(q) || c.type.includes(q)
+    })
+  }, [searchQuery, allCourses, state.admissionYear])
 
   const handleAdd = useCallback((courseId) => {
     const result = addToSimulation(courseId)

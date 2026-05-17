@@ -25,7 +25,7 @@ const TYPE_COLOR = {
   자선: 'text-gray-500 bg-gray-100',
 }
 
-const ADMISSION_YEARS = Array.from({ length: 17 }, (_, i) => String(2026 - i))
+const ADMISSION_YEARS = Array.from({ length: 12 }, (_, i) => String(2026 - i))
 
 const LEVELS = [
   { min: 0,   max: 25,  emoji: '🌱', label: '새내기' },
