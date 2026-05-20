@@ -12,6 +12,7 @@ export default function BoardReply() {
 
   const [content, setContent] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   if (!post) return <Navigate to="/board" replace />
   if (!loading && !currentUser) return <Navigate to="/login" replace />
@@ -31,7 +32,7 @@ export default function BoardReply() {
       await updateDoc(doc(db, 'posts', post.id), { replies: arrayUnion(reply) })
       navigate('/board')
     } catch {
-      alert('답변 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
+      setError('답변 등록에 실패했습니다. 잠시 후 다시 시도해주세요.')
       setSubmitting(false)
     }
   }
@@ -70,6 +71,8 @@ export default function BoardReply() {
             className="w-full border border-gray-200 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none leading-relaxed"
           />
         </div>
+
+        {error && <p className="text-xs text-red-500">{error}</p>}
 
         <div className="flex justify-end gap-2 pt-1">
           <button

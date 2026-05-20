@@ -8,8 +8,6 @@ import {
 import { db } from '@/lib/firebase'
 import { useAuth } from '@/context/AuthContext'
 
-const CATEGORIES = ['전체', '진로질문', '취업', '대학원', '자격증', '일반']
-
 const CATEGORY_COLORS = {
   진로질문: 'bg-blue-50 text-blue-600 border-blue-100',
   취업: 'bg-emerald-50 text-emerald-600 border-emerald-100',
@@ -304,7 +302,6 @@ export default function Board() {
   const [posts, setPosts] = useState([])
   const [loadingPosts, setLoadingPosts] = useState(true)
   const [fetchError, setFetchError] = useState(null)
-  const [activeCategory, setActiveCategory] = useState('전체')
   const [selectedPost, setSelectedPost] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [pendingDelete, setPendingDelete] = useState(null)
@@ -368,7 +365,6 @@ export default function Board() {
   }
 
   const filtered = posts
-    .filter(p => activeCategory === '전체' || p.category === activeCategory)
     .filter(p => {
       if (!searchQuery.trim()) return true
       const q = searchQuery.toLowerCase()
@@ -419,22 +415,6 @@ export default function Board() {
         />
       </div>
 
-      <div className="flex gap-1.5 flex-wrap mb-5">
-        {CATEGORIES.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`px-3 py-1 text-[11px] font-medium rounded-full border transition-colors ${
-              activeCategory === cat
-                ? 'bg-blue-500 text-white border-blue-500'
-                : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
       {fetchError ? (
         <div className="py-16 text-center">
           <p className="text-xs text-red-400">{fetchError}</p>
@@ -449,11 +429,7 @@ export default function Board() {
       ) : filtered.length === 0 ? (
         <div className="py-16 text-center">
           <p className="text-xs text-gray-400">
-            {searchQuery
-              ? '검색 결과가 없습니다.'
-              : activeCategory !== '전체'
-              ? `${activeCategory} 카테고리에 게시글이 없습니다.`
-              : '아직 게시글이 없습니다. 첫 번째 글을 남겨보세요!'}
+            {searchQuery ? '검색 결과가 없습니다.' : '아직 게시글이 없습니다. 첫 번째 글을 남겨보세요!'}
           </p>
         </div>
       ) : (

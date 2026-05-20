@@ -9409,27 +9409,5 @@
     "year": 0,
     "semester": 0,
     "prerequisites": []
-  },
-  "nan": {
-    "name": "nan",
-    "credits": 0,
-    "type": "교선",
-    "year": 0,
-    "semester": 0,
-    "prerequisites": [],
-    "openYears": [
-      2015,
-      2016,
-      2017,
-      2018,
-      2019,
-      2020,
-      2021,
-      2022,
-      2023,
-      2024,
-      2025,
-      2026
-    ]
   }
 }
