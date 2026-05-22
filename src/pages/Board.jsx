@@ -198,98 +198,93 @@ function RoadmapRegisterModal({ post, onClose }) {
   )
 }
 
-// ── 게시글 상세 + 댓글 ──────────────────────────────────────────────
+// ── 게시글 상세 패널 (인라인) ──────────────────────────────────────────
 function PostDetail({ post, currentUser, onClose, onDeletePost, onDeleteReply, onAddToRoadmap }) {
   const navigate = useNavigate()
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30" onClick={onClose}>
-      <div
-        className="bg-white rounded-lg border border-gray-200 w-full max-w-xl mx-4 max-h-[80vh] flex flex-col"
-        onClick={e => e.stopPropagation()}
-      >
-        <div className="flex items-start justify-between px-5 py-4 border-b border-gray-100 flex-shrink-0">
-          <div className="flex-1 min-w-0 pr-4">
-            <div className="flex items-center gap-2 mb-1">
-              <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${CATEGORY_COLORS[post.category]}`}>
-                {post.category}
-              </span>
-            </div>
-            <h3 className="text-sm font-semibold text-gray-900">{post.title}</h3>
-            <p className="text-[11px] text-gray-400 mt-0.5">
-              {post.authorNickname} · {timeAgo(post.createdAt)}
-            </p>
+    <div className="border border-gray-200 rounded-lg flex flex-col max-h-[620px]">
+      <div className="flex items-start justify-between px-5 py-4 border-b border-gray-100 flex-shrink-0">
+        <div className="flex-1 min-w-0 pr-4">
+          <div className="flex items-center gap-2 mb-1">
+            <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${CATEGORY_COLORS[post.category]}`}>
+              {post.category}
+            </span>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-lg leading-none flex-shrink-0">×</button>
+          <h3 className="text-sm font-semibold text-gray-900">{post.title}</h3>
+          <p className="text-[11px] text-gray-400 mt-0.5">
+            익명 · {timeAgo(post.createdAt)}
+          </p>
         </div>
+        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-lg leading-none flex-shrink-0">×</button>
+      </div>
 
-        <div className="overflow-y-auto flex-1 px-5 py-4 space-y-4">
-          <p className="text-xs text-gray-700 whitespace-pre-wrap leading-relaxed">{post.content}</p>
+      <div className="overflow-y-auto flex-1 px-5 py-4 space-y-4">
+        <p className="text-xs text-gray-700 whitespace-pre-wrap leading-relaxed">{post.content}</p>
 
-          <div className="flex items-center gap-3">
-            {currentUser?.isAdmin ? (
+        <div className="flex items-center gap-3">
+          {currentUser?.isAdmin ? (
+            <button onClick={() => onDeletePost(post.id)} className="text-[10px] text-red-400 hover:text-red-600">
+              게시글 삭제
+            </button>
+          ) : currentUser?.userId === post.authorId && (
+            post.replies?.some(r => r.authorId !== post.authorId) ? (
+              <span className="text-[10px] text-gray-300">다른 사용자의 답변이 있어 삭제할 수 없습니다</span>
+            ) : (
               <button onClick={() => onDeletePost(post.id)} className="text-[10px] text-red-400 hover:text-red-600">
                 게시글 삭제
               </button>
-            ) : currentUser?.userId === post.authorId && (
-              post.replies?.some(r => r.authorId !== post.authorId) ? (
-                <span className="text-[10px] text-gray-300">다른 사용자의 답변이 있어 삭제할 수 없습니다</span>
-              ) : (
-                <button onClick={() => onDeletePost(post.id)} className="text-[10px] text-red-400 hover:text-red-600">
-                  게시글 삭제
-                </button>
-              )
-            )}
-            {currentUser?.isAdmin && (
-              <button
-                onClick={() => onAddToRoadmap(post)}
-                className="text-[10px] font-medium text-blue-500 border border-blue-200 rounded px-2 py-0.5 hover:bg-blue-50"
-              >
-                + 로드맵 등록
-              </button>
-            )}
-          </div>
-
-          {post.replies && post.replies.length > 0 && (
-            <div className="border-t border-gray-100 pt-4 space-y-3">
-              <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
-                댓글 {post.replies.length}
-              </p>
-              {post.replies.map(reply => (
-                <div key={reply.id} className="flex gap-2">
-                  <div className="flex-1 bg-gray-50 rounded-md px-3 py-2.5">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-[11px] font-medium text-gray-700">{reply.authorNickname}</span>
-                      <span className="text-[10px] text-gray-400">{timeAgo(reply.createdAt)}</span>
-                    </div>
-                    <p className="text-xs text-gray-600 whitespace-pre-wrap">{reply.content}</p>
-                  </div>
-                  {currentUser?.userId === reply.authorId && (
-                    <button
-                      onClick={() => onDeleteReply(post.id, reply)}
-                      className="text-[10px] text-gray-300 hover:text-red-400 self-start pt-1"
-                    >
-                      ×
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
+            )
           )}
-        </div>
-
-        <div className="border-t border-gray-100 px-5 py-3 flex-shrink-0">
-          {currentUser ? (
+          {currentUser?.isAdmin && (
             <button
-              onClick={() => { onClose(); navigate('/board/reply', { state: { post } }) }}
-              className="w-full py-2 text-xs font-medium text-blue-500 border border-blue-200 rounded-md hover:bg-blue-50 transition-colors"
+              onClick={() => onAddToRoadmap(post)}
+              className="text-[10px] font-medium text-blue-500 border border-blue-200 rounded px-2 py-0.5 hover:bg-blue-50"
             >
-              답변 작성
+              + 로드맵 등록
             </button>
-          ) : (
-            <p className="text-[11px] text-gray-400 text-center">댓글을 달려면 로그인이 필요합니다.</p>
           )}
         </div>
+
+        {post.replies && post.replies.length > 0 && (
+          <div className="border-t border-gray-100 pt-4 space-y-3">
+            <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">
+              댓글 {post.replies.length}
+            </p>
+            {post.replies.map(reply => (
+              <div key={reply.id} className="flex gap-2">
+                <div className="flex-1 bg-gray-50 rounded-md px-3 py-2.5">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[11px] font-medium text-gray-700">익명</span>
+                    <span className="text-[10px] text-gray-400">{timeAgo(reply.createdAt)}</span>
+                  </div>
+                  <p className="text-xs text-gray-600 whitespace-pre-wrap">{reply.content}</p>
+                </div>
+                {currentUser?.userId === reply.authorId && (
+                  <button
+                    onClick={() => onDeleteReply(post.id, reply)}
+                    className="text-[10px] text-gray-300 hover:text-red-400 self-start pt-1"
+                  >
+                    ×
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="border-t border-gray-100 px-5 py-3 flex-shrink-0">
+        {currentUser ? (
+          <button
+            onClick={() => navigate('/board/reply', { state: { post } })}
+            className="w-full py-2 text-xs font-medium text-blue-500 border border-blue-200 rounded-md hover:bg-blue-50 transition-colors"
+          >
+            답변 작성
+          </button>
+        ) : (
+          <p className="text-[11px] text-gray-400 text-center">댓글을 달려면 로그인이 필요합니다.</p>
+        )}
       </div>
     </div>
   )
@@ -364,16 +359,14 @@ export default function Board() {
     }
   }
 
-  const filtered = posts
-    .filter(p => {
-      if (!searchQuery.trim()) return true
-      const q = searchQuery.toLowerCase()
-      return (
-        p.title.toLowerCase().includes(q) ||
-        p.content.toLowerCase().includes(q) ||
-        p.authorNickname.toLowerCase().includes(q)
-      )
-    })
+  const filtered = posts.filter(p => {
+    if (!searchQuery.trim()) return true
+    const q = searchQuery.toLowerCase()
+    return (
+      p.title.toLowerCase().includes(q) ||
+      p.content.toLowerCase().includes(q)
+    )
+  })
 
   return (
     <div>
@@ -405,43 +398,48 @@ export default function Board() {
         </div>
       )}
 
-      <div className="mb-4">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
-          placeholder="제목, 내용, 닉네임 검색"
-          className="w-full border border-gray-200 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-400"
-        />
-      </div>
+      <div className="flex gap-4 items-start">
+        {/* 왼쪽: 검색 + 목록 */}
+        <div className="w-[42%] flex-shrink-0">
+          <div className="mb-3">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder="제목, 내용 검색"
+              className="w-full border border-gray-200 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-400"
+            />
+          </div>
 
-      {fetchError ? (
-        <div className="py-16 text-center">
-          <p className="text-xs text-red-400">{fetchError}</p>
-          <button onClick={() => window.location.reload()} className="mt-3 text-xs text-blue-500 underline">
-            새로고침
-          </button>
-        </div>
-      ) : loadingPosts ? (
-        <div className="py-16 text-center">
-          <p className="text-xs text-gray-400">게시글을 불러오는 중...</p>
-        </div>
-      ) : filtered.length === 0 ? (
-        <div className="py-16 text-center">
-          <p className="text-xs text-gray-400">
-            {searchQuery ? '검색 결과가 없습니다.' : '아직 게시글이 없습니다. 첫 번째 글을 남겨보세요!'}
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-2">
-          {filtered.map(post => (
-            <div
-              key={post.id}
-              onClick={() => setSelectedPost(post)}
-              className="border border-gray-200 rounded-lg px-4 py-3 cursor-pointer hover:border-blue-200 hover:bg-blue-50/30 transition-colors"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex-1 min-w-0">
+          <div className="space-y-2 overflow-y-auto max-h-[600px] pr-0.5">
+            {fetchError ? (
+              <div className="py-16 text-center">
+                <p className="text-xs text-red-400">{fetchError}</p>
+                <button onClick={() => window.location.reload()} className="mt-3 text-xs text-blue-500 underline">
+                  새로고침
+                </button>
+              </div>
+            ) : loadingPosts ? (
+              <div className="py-16 text-center">
+                <p className="text-xs text-gray-400">게시글을 불러오는 중...</p>
+              </div>
+            ) : filtered.length === 0 ? (
+              <div className="py-16 text-center">
+                <p className="text-xs text-gray-400">
+                  {searchQuery ? '검색 결과가 없습니다.' : '아직 게시글이 없습니다. 첫 번째 글을 남겨보세요!'}
+                </p>
+              </div>
+            ) : (
+              filtered.map(post => (
+                <div
+                  key={post.id}
+                  onClick={() => setSelectedPost(post)}
+                  className={`border rounded-lg px-4 py-3 cursor-pointer transition-colors ${
+                    selectedPost?.id === post.id
+                      ? 'border-blue-300 bg-blue-50/50'
+                      : 'border-gray-200 hover:border-blue-200 hover:bg-blue-50/30'
+                  }`}
+                >
                   <div className="flex items-center gap-2 mb-1">
                     <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${CATEGORY_COLORS[post.category]}`}>
                       {post.category}
@@ -452,27 +450,31 @@ export default function Board() {
                   </div>
                   <p className="text-xs font-medium text-gray-900 truncate">{post.title}</p>
                   <p className="text-[11px] text-gray-400 mt-0.5 truncate">{post.content}</p>
+                  <p className="text-[10px] text-gray-400 mt-1">익명 · {timeAgo(post.createdAt)}</p>
                 </div>
-                <div className="text-right flex-shrink-0">
-                  <p className="text-[11px] text-gray-500">{post.authorNickname}</p>
-                  <p className="text-[10px] text-gray-400">{timeAgo(post.createdAt)}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+              ))
+            )}
+          </div>
         </div>
-      )}
 
-      {selectedPost && (
-        <PostDetail
-          post={selectedPost}
-          currentUser={currentUser}
-          onClose={() => setSelectedPost(null)}
-          onDeletePost={handleDeletePost}
-          onDeleteReply={handleDeleteReply}
-          onAddToRoadmap={(post) => { setRoadmapPost(post); setSelectedPost(null) }}
-        />
-      )}
+        {/* 오른쪽: 상세 패널 */}
+        <div className="flex-1 min-w-0">
+          {selectedPost ? (
+            <PostDetail
+              post={selectedPost}
+              currentUser={currentUser}
+              onClose={() => setSelectedPost(null)}
+              onDeletePost={handleDeletePost}
+              onDeleteReply={handleDeleteReply}
+              onAddToRoadmap={(post) => { setSelectedPost(null); setRoadmapPost(post) }}
+            />
+          ) : (
+            <div className="border border-dashed border-gray-200 rounded-lg flex items-center justify-center min-h-[200px]">
+              <p className="text-xs text-gray-400">게시글을 선택하면 내용이 표시됩니다</p>
+            </div>
+          )}
+        </div>
+      </div>
 
       {roadmapPost !== null && (
         <RoadmapRegisterModal

@@ -1,13 +1,15 @@
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { collection, onSnapshot, deleteDoc, addDoc, doc, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import roadmapsData from '@/data/roadmaps.json'
 import Button from '@/components/Button'
 import Modal from '@/components/Modal'
 import { useAuth } from '@/context/AuthContext'
+import { useGraduation } from '@/hooks/useGraduation'
 
 const STORAGE_KEY = 'gradpath_my_roadmap'
 const GOAL_OPTIONS = ['취업', '대학원', '자격증']
+const YEAR_ORDER = ['1학년', '2학년', '3학년', '4학년']
 
 // ── 관리자 직접 등록 모달 ──────────────────────────────────────────
 function AdminAddModal({ onClose }) {
@@ -138,7 +140,7 @@ function AdminAddModal({ onClose }) {
 
 // ── 로드맵 카드 ──────────────────────────────────────────────────
 function RoadmapCard({ roadmap, isSaved, onSave, onDetail, isAdminEntry, onDelete, currentUser }) {
-  const yearKeys = Object.keys(roadmap.yearPlan)
+  const yearKeys = YEAR_ORDER.filter(k => k in roadmap.yearPlan)
 
   return (
     <div className="border border-gray-200 rounded p-4 flex flex-col gap-3 hover:border-gray-400 transition-colors">
@@ -185,14 +187,31 @@ function RoadmapCard({ roadmap, isSaved, onSave, onDetail, isAdminEntry, onDelet
   )
 }
 
-function DetailModal({ roadmap, isOpen, onClose, isSaved, onSave }) {
+function DetailModal({ roadmap, isOpen, onClose, isSaved, onSave, completedNames }) {
   if (!roadmap) return null
-  const yearKeys = Object.keys(roadmap.yearPlan)
+  const yearKeys = YEAR_ORDER.filter(k => k in roadmap.yearPlan)
+
+  const allCourses = yearKeys.flatMap(k => roadmap.yearPlan[k] || [])
+  const completedCount = allCourses.filter(c => completedNames.has(c)).length
+  const totalCount = allCourses.length
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={roadmap.name}>
       <div className="space-y-4 max-h-[65vh] overflow-y-auto pr-1">
         <p className="text-xs text-gray-400">{roadmap.goalDetail}</p>
+
+        {totalCount > 0 && (
+          <div className="flex items-center gap-2 px-3 py-2 bg-blue-50 rounded-md">
+            <span className="text-xs text-blue-600 font-medium">{completedCount} / {totalCount} 과목 이수</span>
+            <div className="flex-1 h-1.5 bg-blue-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-blue-500 rounded-full transition-all"
+                style={{ width: `${totalCount > 0 ? (completedCount / totalCount) * 100 : 0}%` }}
+              />
+            </div>
+            <span className="text-[10px] text-blue-400">{totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0}%</span>
+          </div>
+        )}
 
         <div>
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">학년별 계획</p>
@@ -201,11 +220,15 @@ function DetailModal({ roadmap, isOpen, onClose, isSaved, onSave }) {
               <div key={year}>
                 <p className="text-xs font-medium text-gray-700 mb-1">{year}</p>
                 <ul className="space-y-0.5 pl-2">
-                  {roadmap.yearPlan[year].map((course, i) => (
-                    <li key={i} className="text-xs text-gray-500 flex gap-2">
-                      <span className="text-gray-300">—</span>{course}
-                    </li>
-                  ))}
+                  {roadmap.yearPlan[year].map((course, i) => {
+                    const done = completedNames.has(course)
+                    return (
+                      <li key={i} className="text-xs flex gap-2 items-center">
+                        <span className={done ? 'text-blue-400' : 'text-gray-300'}>{done ? '✓' : '○'}</span>
+                        <span className={done ? 'text-gray-400 line-through' : 'text-gray-600'}>{course}</span>
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             ))}
@@ -246,6 +269,7 @@ function DetailModal({ roadmap, isOpen, onClose, isSaved, onSave }) {
 
 export default function Roadmap() {
   const { currentUser } = useAuth()
+  const { state, allCourses } = useGraduation()
   const [filter, setFilter] = useState('전체')
   const [selectedRoadmap, setSelectedRoadmap] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -264,6 +288,15 @@ export default function Roadmap() {
       return null
     }
   })
+
+  // 이수 과목 이름 집합 (로드맵 과목명과 비교용)
+  const completedNames = useMemo(() => {
+    const nameSet = new Set()
+    state.completedCourses.forEach(id => {
+      if (allCourses[id]) nameSet.add(allCourses[id].name)
+    })
+    return nameSet
+  }, [state.completedCourses, allCourses])
 
   // Firestore 관리자 로드맵 구독
   useEffect(() => {
@@ -345,7 +378,15 @@ export default function Roadmap() {
             <p className="text-xs text-blue-600 font-medium mb-0.5">내 계획</p>
             <p className="text-xs text-gray-700">{savedPlan.name}</p>
           </div>
-          <button onClick={handleClearPlan} className="text-xs text-gray-400 hover:text-gray-600">초기화</button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => handleDetail(savedPlan)}
+              className="text-xs text-blue-500 hover:text-blue-700"
+            >
+              이수 현황 보기
+            </button>
+            <button onClick={handleClearPlan} className="text-xs text-gray-400 hover:text-gray-600">초기화</button>
+          </div>
         </div>
       )}
 
@@ -401,6 +442,7 @@ export default function Roadmap() {
         onClose={() => setIsModalOpen(false)}
         isSaved={savedPlan?.id === selectedRoadmap?.id}
         onSave={handleSave}
+        completedNames={completedNames}
       />
 
       {showAdminAdd && <AdminAddModal onClose={() => setShowAdminAdd(false)} />}
