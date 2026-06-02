@@ -1,4 +1,5 @@
 import { useTimer } from '@/hooks/useTimer'
+import { useAuth } from '@/context/AuthContext'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts'
@@ -17,13 +18,14 @@ function pad(n) {
 }
 
 export default function Timer() {
+  const { currentUser } = useAuth()
   const {
     minutes, seconds, progress,
     running, isBreak,
     todaySessions, todayMinutes,
     history,
     start, pause, reset,
-  } = useTimer()
+  } = useTimer(currentUser?.userId)
 
   const chartData = history.map(d => ({
     date: d.date.slice(5),

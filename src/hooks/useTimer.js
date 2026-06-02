@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { doc, getDoc, updateDoc } from 'firebase/firestore'
+import { db } from '@/lib/firebase'
 
 const STORAGE_KEY = 'gradpath_timer'
 const FOCUS_MINUTES = 25
@@ -33,7 +35,7 @@ function buildHistory(stored) {
   }))
 }
 
-export function useTimer() {
+export function useTimer(userId) {
   const [isBreak, setIsBreak] = useState(false)
   const [secondsLeft, setSecondsLeft] = useState(FOCUS_MINUTES * 60)
   const [running, setRunning] = useState(false)
@@ -47,6 +49,20 @@ export function useTimer() {
     return stored[getTodayKey()]?.minutes ?? 0
   })
   const [history, setHistory] = useState(() => buildHistory(loadStorage()))
+
+  // 로그인 시 Firestore에서 타이머 기록 로드 (localStorage보다 우선)
+  useEffect(() => {
+    if (!userId) return
+    getDoc(doc(db, 'users', userId)).then(snap => {
+      if (snap.exists() && snap.data().timerHistory) {
+        const stored = snap.data().timerHistory
+        saveStorage(stored)
+        setTodaySessions(stored[getTodayKey()]?.sessions ?? 0)
+        setTodayMinutes(stored[getTodayKey()]?.minutes ?? 0)
+        setHistory(buildHistory(stored))
+      }
+    }).catch(() => {})
+  }, [userId])
 
   // 자정에 날짜가 바뀌면 오늘 통계 초기화
   useEffect(() => {
@@ -95,7 +111,12 @@ export function useTimer() {
           : d
       )
     )
-  }, [])
+
+    // Firestore 동기화 (로그인 상태일 때)
+    if (userId) {
+      updateDoc(doc(db, 'users', userId), { timerHistory: updated }).catch(() => {})
+    }
+  }, [userId])
 
   useEffect(() => {
     if (!running) return
@@ -103,7 +124,6 @@ export function useTimer() {
     intervalRef.current = setInterval(() => {
       setSecondsLeft(prev => {
         if (prev <= 1) {
-          // ref로 StrictMode 이중 실행 방지
           if (!sessionDoneRef.current) {
             sessionDoneRef.current = true
             clearTimer()

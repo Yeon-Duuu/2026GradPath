@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
-import { collection, onSnapshot, deleteDoc, addDoc, doc, serverTimestamp } from 'firebase/firestore'
+import { collection, onSnapshot, deleteDoc, addDoc, doc, serverTimestamp, updateDoc, getDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 import roadmapsData from '@/data/roadmaps.json'
 import Button from '@/components/Button'
@@ -289,6 +289,18 @@ export default function Roadmap() {
     }
   })
 
+  // 로그인 시 Firestore에서 저장한 로드맵 로드
+  useEffect(() => {
+    if (!currentUser) return
+    getDoc(doc(db, 'users', currentUser.userId)).then(snap => {
+      if (snap.exists() && snap.data().savedRoadmap) {
+        const plan = snap.data().savedRoadmap
+        setSavedPlan(plan)
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(plan))
+      }
+    }).catch(() => {})
+  }, [currentUser?.userId])
+
   // 이수 과목 이름 집합 (로드맵 과목명과 비교용)
   const completedNames = useMemo(() => {
     const nameSet = new Set()
@@ -320,7 +332,10 @@ export default function Roadmap() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(roadmap))
     setSavedPlan(roadmap)
     setSaveToast(roadmap.name)
-  }, [])
+    if (currentUser) {
+      updateDoc(doc(db, 'users', currentUser.userId), { savedRoadmap: roadmap }).catch(() => {})
+    }
+  }, [currentUser])
 
   useEffect(() => {
     if (!saveToast) return
@@ -331,7 +346,10 @@ export default function Roadmap() {
   const handleClearPlan = useCallback(() => {
     localStorage.removeItem(STORAGE_KEY)
     setSavedPlan(null)
-  }, [])
+    if (currentUser) {
+      updateDoc(doc(db, 'users', currentUser.userId), { savedRoadmap: null }).catch(() => {})
+    }
+  }, [currentUser])
 
   const handleDetail = useCallback((roadmap) => {
     setSelectedRoadmap(roadmap)
@@ -347,6 +365,9 @@ export default function Roadmap() {
       if (savedPlan?.id === id) {
         localStorage.removeItem(STORAGE_KEY)
         setSavedPlan(null)
+        if (currentUser) {
+          updateDoc(doc(db, 'users', currentUser.userId), { savedRoadmap: null }).catch(() => {})
+        }
       }
     } catch {
       setDeleteError('삭제에 실패했습니다. 잠시 후 다시 시도해주세요.')
