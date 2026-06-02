@@ -25,18 +25,6 @@ function categoryToGoal(cat) {
   return '취업'
 }
 
-function timeAgo(timestamp) {
-  if (!timestamp) return '방금 전'
-  const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp)
-  const diff = Date.now() - date.getTime()
-  const minutes = Math.floor(diff / 60000)
-  if (minutes < 1) return '방금 전'
-  if (minutes < 60) return `${minutes}분 전`
-  const hours = Math.floor(minutes / 60)
-  if (hours < 24) return `${hours}시간 전`
-  return `${Math.floor(hours / 24)}일 전`
-}
-
 // ── 관리자 로드맵 등록 모달 ────────────────────────────────────────────
 function RoadmapRegisterModal({ post, onClose }) {
   const autoGoal = categoryToGoal(post?.category)
@@ -216,9 +204,7 @@ function PostDetail({ post, currentUser, onClose, onDeletePost, onDeleteReply, o
             </span>
           </div>
           <h3 className="text-sm font-semibold text-gray-900">{post.title}</h3>
-          <p className="text-[11px] text-gray-400 mt-0.5">
-            익명 · {timeAgo(post.createdAt)}
-          </p>
+          <p className="text-[11px] text-gray-400 mt-0.5">익명</p>
         </div>
         <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-lg leading-none flex-shrink-0">×</button>
       </div>
@@ -258,9 +244,8 @@ function PostDetail({ post, currentUser, onClose, onDeletePost, onDeleteReply, o
             {post.replies.map(reply => (
               <div key={reply.id} className="flex gap-2">
                 <div className="flex-1 bg-gray-50 rounded-md px-3 py-2.5">
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center mb-1">
                     <span className="text-[11px] font-medium text-gray-700">익명</span>
-                    <span className="text-[10px] text-gray-400">{timeAgo(reply.createdAt)}</span>
                   </div>
                   <p className="text-xs text-gray-600 whitespace-pre-wrap">{reply.content}</p>
                 </div>
@@ -448,7 +433,7 @@ export default function Board() {
               </div>
               <p className="text-xs font-medium text-gray-900 truncate">{post.title}</p>
               <p className="text-[11px] text-gray-400 mt-0.5 truncate">{post.content}</p>
-              <p className="text-[10px] text-gray-400 mt-1.5">익명 · {timeAgo(post.createdAt)}</p>
+              <p className="text-[10px] text-gray-400 mt-1.5">익명</p>
             </div>
           ))}
         </div>
