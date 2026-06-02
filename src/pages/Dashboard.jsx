@@ -6,6 +6,7 @@ import {
 } from 'recharts'
 import { useGraduation } from '@/hooks/useGraduation'
 import { useBadge } from '@/hooks/useBadge'
+import { useAuth } from '@/context/AuthContext'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 
@@ -106,6 +107,7 @@ export default function Dashboard() {
     allCourses,
   } = useGraduation()
 
+  const { currentUser, updateStudentInfo } = useAuth()
   const badges = useBadge({ statusByCategory, isGraduatable })
   const [courseQuery, setCourseQuery] = useState('')
   const [courseTypeFilter, setCourseTypeFilter] = useState('전체')
@@ -113,6 +115,19 @@ export default function Dashboard() {
   const toastTimerRef = useRef(null)
 
   useEffect(() => () => { if (toastTimerRef.current) clearTimeout(toastTimerRef.current) }, [])
+
+  // 로그인 계정의 학생 정보가 있으면 우선 적용
+  useEffect(() => {
+    if (currentUser?.admissionYear) {
+      dispatch({
+        type: 'SET_STUDENT',
+        payload: {
+          studentId: currentUser.studentId ?? '',
+          admissionYear: currentUser.admissionYear,
+        },
+      })
+    }
+  }, [currentUser?.userId])
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     defaultValues: {
@@ -126,8 +141,11 @@ export default function Dashboard() {
   }, [state.studentId, state.admissionYear, reset])
 
   const onSetStudent = useCallback(
-    (data) => dispatch({ type: 'SET_STUDENT', payload: data }),
-    [dispatch]
+    (data) => {
+      dispatch({ type: 'SET_STUDENT', payload: data })
+      if (currentUser) updateStudentInfo(data.studentId, data.admissionYear)
+    },
+    [dispatch, currentUser, updateStudentInfo]
   )
   const removeCourse = useCallback(
     (id) => dispatch({ type: 'REMOVE_COURSE', payload: id }),

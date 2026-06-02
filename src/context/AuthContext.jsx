@@ -80,13 +80,29 @@ export function AuthProvider({ children }) {
         await updateDoc(ref, { password: hashed })
       }
 
-      const user = { userId, nickname: data.nickname, isAdmin: data.isAdmin ?? false }
+      const user = {
+        userId,
+        nickname: data.nickname,
+        isAdmin: data.isAdmin ?? false,
+        admissionYear: data.admissionYear ?? '',
+        studentId: data.studentId ?? '',
+      }
       localStorage.setItem(SESSION_KEY, JSON.stringify(user))
       setCurrentUser(user)
-      return { success: true }
+      return { success: true, admissionYear: user.admissionYear, studentId: user.studentId }
     } catch {
       return { success: false, error: '서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.' }
     }
+  }
+
+  async function updateStudentInfo(studentId, admissionYear) {
+    if (!currentUser) return
+    try {
+      await updateDoc(doc(db, 'users', currentUser.userId), { studentId, admissionYear })
+      const updated = { ...currentUser, studentId, admissionYear }
+      localStorage.setItem(SESSION_KEY, JSON.stringify(updated))
+      setCurrentUser(updated)
+    } catch {}
   }
 
   function logout() {
@@ -95,7 +111,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, login, logout, register }}>
+    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo }}>
       {children}
     </AuthContext.Provider>
   )
