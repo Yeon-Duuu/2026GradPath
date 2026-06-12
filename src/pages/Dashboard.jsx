@@ -1,3 +1,4 @@
+// 졸업요건 대시보드: 학생 정보와 이수 과목을 기반으로 졸업요건 달성 현황을 표시하는 페이지
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import {
