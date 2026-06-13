@@ -82,8 +82,8 @@ export default function Navbar() {
   }
 
   async function handleStudentClear() {
-    if (!window.confirm('학생 정보를 초기화할까요?')) return
-    dispatch({ type: 'SET_STUDENT', payload: { studentId: '', admissionYear: '2024' } })
+    if (!window.confirm('학생 정보 및 이수 과목을 모두 초기화할까요?')) return
+    dispatch({ type: 'RESET' })
     await updateStudentInfo('', '2024')
   }
 
