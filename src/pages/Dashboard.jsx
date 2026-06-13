@@ -199,8 +199,6 @@ export default function Dashboard() {
     })
   }, [allCourses, state.completedCourses, courseQuery, courseTypeFilter, state.admissionYear])
 
-  const isFirstVisit = state.completedCourses.length === 0 && !state.studentId
-
   return (
     <div className="space-y-5">
       {addedToast && (
@@ -215,7 +213,7 @@ export default function Dashboard() {
           <p className="text-xs text-gray-400 mt-0.5">계명대학교 컴퓨터공학과</p>
         </div>
         <div className="flex items-center gap-2">
-          {state.completedCourses.length > 0 && (
+          {state.studentId && state.completedCourses.length > 0 && (
             <button
               onClick={() => {
                 if (!window.confirm('이수 과목을 전부 초기화할까요?')) return
@@ -226,26 +224,59 @@ export default function Dashboard() {
               이수 초기화
             </button>
           )}
-          <span className={`text-xs font-medium px-2.5 py-1 rounded-md border ${
-            isGraduatable
-              ? 'border-blue-200 text-blue-600 bg-blue-50'
-              : 'border-gray-200 text-gray-500'
-          }`}>
-            {isGraduatable ? '졸업 가능' : '요건 미충족'}
-          </span>
+          {state.studentId && (
+            <span className={`text-xs font-medium px-2.5 py-1 rounded-md border ${
+              isGraduatable
+                ? 'border-blue-200 text-blue-600 bg-blue-50'
+                : 'border-gray-200 text-gray-500'
+            }`}>
+              {isGraduatable ? '졸업 가능' : '요건 미충족'}
+            </span>
+          )}
         </div>
       </div>
 
-      {/* Onboarding */}
-      {isFirstVisit && (
-        <div className="border border-dashed border-gray-200 rounded-lg p-6 text-center">
-          <p className="text-sm font-medium text-gray-600">GradPath에 오신 것을 환영합니다</p>
-          <p className="text-xs text-gray-400 mt-1.5">
-            아래 학생 정보를 입력하고 이수한 과목을 추가하면<br />졸업요건 달성률을 실시간으로 확인할 수 있습니다.
-          </p>
-        </div>
-      )}
-
+      {/* 학생정보 미등록 시 게이트 */}
+      {!state.studentId ? (
+        <>
+          <div className="border border-dashed border-blue-200 rounded-lg px-6 py-10 text-center bg-blue-50/30">
+            <p className="text-sm font-semibold text-gray-700">학생 정보를 먼저 등록해주세요</p>
+            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+              학번과 입학연도를 입력하면<br />졸업요건 확인, 이수 과목 추가 등 핵심 기능을 사용할 수 있습니다.
+            </p>
+          </div>
+          {/* Student Info */}
+          <Section title="학생 정보">
+            <form onSubmit={handleSubmit(onSetStudent)} className="flex flex-wrap gap-3 items-end">
+              <div className="w-36">
+                <Input
+                  label="학번 (7자리)"
+                  placeholder="2220001"
+                  maxLength={7}
+                  error={errors.studentId?.message}
+                  {...register('studentId', {
+                    required: '학번을 입력해주세요',
+                    pattern: { value: /^\d{7}$/, message: '7자리 숫자로 입력해주세요' },
+                  })}
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="text-xs font-medium text-gray-600">입학연도</label>
+                <select
+                  className="px-2.5 py-1.5 text-xs border border-gray-300 rounded-md focus:outline-none focus:border-blue-400 bg-white"
+                  {...register('admissionYear', { required: true })}
+                >
+                  {ADMISSION_YEARS.map(y => (
+                    <option key={y} value={y}>{y}학년도</option>
+                  ))}
+                </select>
+              </div>
+              <Button type="submit">등록</Button>
+            </form>
+          </Section>
+        </>
+      ) : (
+        <>
       {/* Level & Badges */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <Section title="나의 레벨">
@@ -318,11 +349,9 @@ export default function Dashboard() {
           </div>
           <Button type="submit">저장</Button>
         </form>
-        {state.studentId && (
-          <p className="mt-3 text-xs text-gray-400">
-            {state.studentId} · {state.admissionYear}학번 · 졸업요건 {totalRequired}학점
-          </p>
-        )}
+        <p className="mt-3 text-xs text-gray-400">
+          {state.studentId} · {state.admissionYear}학번 · 졸업요건 {totalRequired}학점
+        </p>
       </Section>
 
       {/* Charts */}
@@ -493,6 +522,8 @@ export default function Dashboard() {
           )}
         </div>
       </Section>
+        </>
+      )}
     </div>
   )
 }

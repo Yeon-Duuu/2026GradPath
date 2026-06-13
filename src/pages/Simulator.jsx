@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useSimulator } from '@/hooks/useSimulator'
 import Button from '@/components/Button'
 
@@ -110,6 +111,29 @@ export default function Simulator() {
   const [searchQuery, setSearchQuery] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const errorTimerRef = useRef(null)
+
+  if (!state.studentId) {
+    return (
+      <div className="space-y-5">
+        <div className="pb-2 border-b border-gray-100">
+          <h1 className="text-base font-semibold text-gray-900">졸업 시뮬레이터</h1>
+          <p className="text-xs text-gray-400 mt-0.5">수강 예정 과목을 추가해 졸업 가능 여부를 확인하세요</p>
+        </div>
+        <div className="border border-dashed border-blue-200 rounded-lg px-6 py-10 text-center bg-blue-50/30">
+          <p className="text-sm font-semibold text-gray-700">학생 정보를 먼저 등록해주세요</p>
+          <p className="text-xs text-gray-400 mt-2 leading-relaxed mb-5">
+            학번과 입학연도가 등록되어야 시뮬레이터를 사용할 수 있습니다.
+          </p>
+          <Link
+            to="/"
+            className="inline-block text-xs font-medium text-blue-500 border border-blue-200 rounded px-4 py-1.5 hover:bg-blue-50 transition-colors"
+          >
+            대시보드에서 등록하기 →
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const filteredCourses = useMemo(() => {
     const q = searchQuery.trim().toLowerCase()
