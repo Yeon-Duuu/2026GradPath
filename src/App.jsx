@@ -44,7 +44,7 @@ export default function App() {
                     <Route path="/board" element={<PrivateRoute><Board /></PrivateRoute>} />
                     <Route path="/board/write" element={<PrivateRoute><BoardWrite /></PrivateRoute>} />
                     <Route path="/board/reply" element={<PrivateRoute><BoardReply /></PrivateRoute>} />
-                    <Route path="/manual" element={<PrivateRoute><Manual /></PrivateRoute>} />
+                    <Route path="/manual" element={<Manual />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>

@@ -28,7 +28,7 @@ export default function Navbar() {
 
   function handleLogout() {
     logout()
-    navigate('/')
+    navigate('/login')
   }
 
   async function handleNicknameSave() {

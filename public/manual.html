@@ -280,7 +280,7 @@
     <div class="cover-meta">
       <span><strong>접속 주소</strong>https://gradpath-phi.vercel.app</span>
       <span><strong>대상</strong>계명대 컴퓨터공학과 전학년</span>
-      <span><strong>작성일</strong>2026년 5월</span>
+      <span><strong>작성일</strong>2026년 6월</span>
     </div>
   </div>
 
@@ -307,8 +307,24 @@
   <p>아래 주소를 브라우저(크롬 권장)에서 열면 됩니다. 앱 설치 필요 없음.</p>
   <div class="url-box">https://gradpath-phi.vercel.app</div>
 
-  <h3>첫 방문 안내</h3>
-  <p>처음 접속하면 상단에 안내 배너가 표시됩니다. 학번과 입학연도를 입력하고 이수한 과목을 추가하면 졸업요건 달성률을 바로 확인할 수 있습니다.</p>
+  <h3>로그인 필수</h3>
+  <p>GradPath는 <strong>회원가입 후 로그인해야 모든 기능을 사용</strong>할 수 있습니다. 처음 접속하면 로그인 페이지로 이동합니다. (사용 설명서는 로그인 없이도 볼 수 있습니다.)</p>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>회원가입 탭 선택 → 아이디 / 비밀번호 입력</strong>
+        <p>처음 방문이라면 "회원가입" 탭에서 계정을 만드세요.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>로그인 → 대시보드 자동 이동</strong>
+        <p>가입 후 로그인하면 대시보드로 이동합니다.</p>
+      </div>
+    </div>
+  </div>
 
   <h3>학번과 입학연도 입력</h3>
   <div class="step-list">
@@ -337,13 +353,13 @@
       <div class="step-num">4</div>
       <div class="step-content">
         <strong>저장 버튼 클릭</strong>
-        <p>저장하면 브라우저에 자동 기억됩니다. 다음에 열어도 유지됩니다.</p>
+        <p>로그인 상태에서 저장하면 Firebase 클라우드에 동기화됩니다. 다른 기기에서 로그인해도 동일한 정보가 유지됩니다.</p>
       </div>
     </div>
   </div>
 
   <div class="tip">
-    <strong>데이터 저장 방식:</strong> 학번·이수 과목 등 졸업 관련 데이터는 내 브라우저(localStorage)에만 저장됩니다. 단, <strong>계정(로그인)</strong>과 <strong>게시판 글·댓글</strong>은 Firebase 클라우드에 저장되어 모든 사용자가 실시간으로 공유합니다.
+    <strong>다기기 동기화:</strong> 로그인 상태에서 입력한 이수 과목, 학생 정보, 저장한 로드맵, 타이머 기록은 Firebase 클라우드에 저장됩니다. 어디서 로그인해도 동일한 데이터가 불러와집니다.
   </div>
 
   <hr />
@@ -570,15 +586,15 @@
     <span class="nav-item">타이머</span>
   </div>
 
-  <p>게시판에 글을 쓰거나 댓글을 달려면 계정이 필요합니다. 로그인하지 않아도 읽기는 가능합니다.</p>
+  <p>GradPath의 모든 기능은 <strong>로그인 후에만 사용 가능</strong>합니다. 로그인하면 이수 과목, 학생 정보, 로드맵, 타이머 기록이 계정에 연동되어 다기기에서도 동일하게 유지됩니다.</p>
 
   <h3>회원가입</h3>
   <div class="step-list">
     <div class="step-item">
       <div class="step-num">1</div>
       <div class="step-content">
-        <strong>상단 네비바 "로그인" 클릭 → 회원가입 탭 선택</strong>
-        <p>로그인 페이지에서 "회원가입" 탭을 클릭합니다.</p>
+        <strong>로그인 페이지 → 회원가입 탭 선택</strong>
+        <p>처음 접속 시 자동으로 로그인 페이지로 이동합니다. "회원가입" 탭을 클릭합니다.</p>
       </div>
     </div>
     <div class="step-item">
@@ -605,19 +621,26 @@
   </div>
 
   <div class="warn">
-    <strong>주의:</strong> 닉네임은 랜덤 부여되며 변경할 수 없습니다. 아이디와 비밀번호를 잊어버리면 복구가 불가능하므로 반드시 기록해두세요.
+    <strong>주의:</strong> 아이디와 비밀번호를 잊어버리면 복구가 불가능하므로 반드시 기록해두세요.
   </div>
 
   <h3>로그인 / 로그아웃</h3>
   <ul>
     <li>로그인: 아이디 + 비밀번호 입력 후 로그인 버튼 클릭</li>
     <li>로그인 성공 시 상단 네비바에 닉네임이 표시됩니다</li>
-    <li>로그아웃: 네비바 우측 "로그아웃" 버튼 클릭</li>
+    <li>로그아웃: 네비바 우측 "로그아웃" 버튼 클릭 → 로그인 페이지로 이동</li>
     <li>로그인 상태는 브라우저를 닫아도 유지됩니다 (localStorage 세션)</li>
   </ul>
 
+  <h3>닉네임 변경</h3>
+  <ul>
+    <li>네비바 우측 닉네임을 클릭하면 인라인 편집 모드로 전환됩니다</li>
+    <li>새 닉네임 입력 후 저장(또는 Enter) → 즉시 반영 · Firebase 동기화</li>
+    <li>Escape 키로 취소할 수 있습니다</li>
+  </ul>
+
   <div class="tip">
-    <strong>계정 데이터 저장 위치:</strong> 계정 정보(아이디·비밀번호·닉네임)는 Firebase 클라우드에 저장됩니다. 다른 컴퓨터에서도 같은 계정으로 로그인할 수 있습니다.
+    <strong>계정 연동 데이터:</strong> 이수 과목, 학생 정보(학번·입학연도), 저장한 로드맵, 타이머 기록, 닉네임은 모두 Firebase에 저장됩니다. 다른 기기에서 로그인해도 동일한 데이터가 불러와집니다.
   </div>
 
   <hr />
@@ -634,7 +657,7 @@
     <span class="nav-item">타이머</span>
   </div>
 
-  <p>졸업 후 진로, 취업, 대학원, 자격증 등에 대해 선배에게 질문하고 답변을 받을 수 있는 실시간 공유 게시판입니다. <strong>모든 사용자가 같은 게시판을 공유합니다.</strong></p>
+  <p>졸업 후 진로, 취업, 대학원, 자격증 등에 대해 선배에게 질문하고 답변을 받을 수 있는 실시간 공유 게시판입니다. <strong>로그인 후 사용 가능하며, 모든 사용자가 같은 게시판을 공유합니다.</strong></p>
 
   <h3>카테고리</h3>
   <table>
@@ -651,8 +674,8 @@
     <div class="step-item">
       <div class="step-num">1</div>
       <div class="step-content">
-        <strong>로그인 후 "글쓰기" 버튼 클릭</strong>
-        <p>비로그인 상태에서는 "로그인 후 작성" 버튼이 표시됩니다.</p>
+        <strong>"글쓰기" 버튼 클릭 (로그인 필수)</strong>
+        <p>비로그인 상태에서는 게시판 자체에 접근할 수 없습니다.</p>
       </div>
     </div>
     <div class="step-item">
@@ -680,8 +703,9 @@
 
   <h3>검색 및 필터</h3>
   <ul>
-    <li>상단 검색창: 제목, 내용, 닉네임으로 검색</li>
+    <li>상단 검색창: 제목, 내용으로 검색 (닉네임 검색 제외)</li>
     <li>카테고리 버튼: 원하는 카테고리만 필터링</li>
+    <li><strong>내 글</strong> 탭: 내가 작성한 게시글만 모아보기 (로그인 시 표시)</li>
   </ul>
 
   <div class="tip">
@@ -724,8 +748,8 @@
   <h2>9. 자주 묻는 질문</h2>
 
   <div class="card">
-    <div class="card-title">Q. 다른 컴퓨터에서 내 이수 내역이 안 보여요</div>
-    데이터는 각 브라우저의 로컬 저장소에만 저장됩니다. 다른 컴퓨터에서는 다시 입력해야 합니다.
+    <div class="card-title">Q. 다른 컴퓨터에서 내 이수 내역을 불러오고 싶어요</div>
+    같은 아이디로 로그인하면 이수 과목, 학생 정보, 저장한 로드맵, 타이머 기록이 자동으로 불러와집니다. Firebase 클라우드에 저장되므로 기기에 상관없이 동기화됩니다.
   </div>
 
   <div class="card">
