@@ -113,12 +113,10 @@ export function AuthProvider({ children }) {
         admissionYear: '2024',
         completedCourses: [],
         savedRoadmap: null,
-        timerHistory: {},
       })
       const updated = { ...currentUser, studentId: '', admissionYear: '2024' }
       localStorage.setItem(SESSION_KEY, JSON.stringify(updated))
       localStorage.removeItem('gradpath_my_roadmap')
-      localStorage.removeItem('gradpath_timer')
       setCurrentUser(updated)
     } catch {}
   }

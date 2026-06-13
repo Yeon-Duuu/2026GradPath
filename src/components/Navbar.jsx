@@ -89,7 +89,7 @@ export default function Navbar() {
   }
 
   async function handleStudentClear() {
-    if (!window.confirm('모든 학습 데이터(학생정보, 이수 과목, 로드맵, 타이머 기록)를 초기화할까요?')) return
+    if (!window.confirm('학생정보, 이수 과목, 저장된 로드맵을 초기화할까요?')) return
     dispatch({ type: 'RESET' })
     await resetUserData()
     navigate('/')
