@@ -213,13 +213,26 @@ export default function Dashboard() {
           <h1 className="text-base font-semibold text-gray-900">졸업 요건 대시보드</h1>
           <p className="text-xs text-gray-400 mt-0.5">계명대학교 컴퓨터공학과</p>
         </div>
-        <span className={`text-xs font-medium px-2.5 py-1 rounded-md border ${
-          isGraduatable
-            ? 'border-blue-200 text-blue-600 bg-blue-50'
-            : 'border-gray-200 text-gray-500'
-        }`}>
-          {isGraduatable ? '졸업 가능' : '요건 미충족'}
-        </span>
+        <div className="flex items-center gap-2">
+          {state.completedCourses.length > 0 && (
+            <button
+              onClick={() => {
+                if (!window.confirm('이수 과목을 전부 초기화할까요?')) return
+                dispatch({ type: 'LOAD_COURSES', payload: [] })
+              }}
+              className="text-xs text-gray-400 border border-gray-200 rounded px-2.5 py-1 hover:border-red-300 hover:text-red-400 transition-colors"
+            >
+              이수 초기화
+            </button>
+          )}
+          <span className={`text-xs font-medium px-2.5 py-1 rounded-md border ${
+            isGraduatable
+              ? 'border-blue-200 text-blue-600 bg-blue-50'
+              : 'border-gray-200 text-gray-500'
+          }`}>
+            {isGraduatable ? '졸업 가능' : '요건 미충족'}
+          </span>
+        </div>
       </div>
 
       {/* Onboarding */}

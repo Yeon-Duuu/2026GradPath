@@ -152,6 +152,16 @@ export function useTimer(userId) {
     setSecondsLeft(FOCUS_MINUTES * 60)
   }, [clearTimer])
 
+  const clearHistory = useCallback(() => {
+    saveStorage({})
+    setTodaySessions(0)
+    setTodayMinutes(0)
+    setHistory(buildHistory({}))
+    if (userId) {
+      updateDoc(doc(db, 'users', userId), { timerHistory: {} }).catch(() => {})
+    }
+  }, [userId])
+
   const minutes = Math.floor(secondsLeft / 60)
   const seconds = secondsLeft % 60
   const progress = ((totalSeconds - secondsLeft) / totalSeconds) * 100
@@ -168,5 +178,6 @@ export function useTimer(userId) {
     start,
     pause,
     reset,
+    clearHistory,
   }
 }

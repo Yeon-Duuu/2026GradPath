@@ -386,14 +386,27 @@ export default function Roadmap() {
           <h1 className="text-base font-semibold text-gray-900">선배 로드맵</h1>
           <p className="text-xs text-gray-400 mt-0.5">다양한 목표를 가진 선배들의 4년 계획을 참고하세요</p>
         </div>
-        {currentUser?.isAdmin && (
-          <button
-            onClick={() => setShowAdminAdd(true)}
-            className="px-3 py-1.5 text-xs font-medium text-blue-500 border border-blue-200 rounded-md hover:bg-blue-50"
-          >
-            + 로드맵 직접 등록
-          </button>
-        )}
+        <div className="flex items-center gap-2">
+          {savedPlan && (
+            <button
+              onClick={() => {
+                if (!window.confirm('저장된 내 계획을 삭제할까요?')) return
+                handleClearPlan()
+              }}
+              className="text-xs text-gray-400 border border-gray-200 rounded px-2.5 py-1 hover:border-red-300 hover:text-red-400 transition-colors"
+            >
+              계획 삭제
+            </button>
+          )}
+          {currentUser?.isAdmin && (
+            <button
+              onClick={() => setShowAdminAdd(true)}
+              className="px-3 py-1.5 text-xs font-medium text-blue-500 border border-blue-200 rounded-md hover:bg-blue-50"
+            >
+              + 로드맵 직접 등록
+            </button>
+          )}
+        </div>
       </div>
 
       {savedPlan && (

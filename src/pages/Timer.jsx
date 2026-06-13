@@ -24,7 +24,7 @@ export default function Timer() {
     running, isBreak,
     todaySessions, todayMinutes,
     history,
-    start, pause, reset,
+    start, pause, reset, clearHistory,
   } = useTimer(currentUser?.userId)
 
   const chartData = history.map(d => ({
@@ -36,9 +36,22 @@ export default function Timer() {
   return (
     <div className="space-y-5">
       {/* Header */}
-      <div className="pb-2 border-b border-gray-100">
-        <h1 className="text-base font-semibold text-gray-900">집중 타이머</h1>
-        <p className="text-xs text-gray-400 mt-0.5">뽀모도로 방식 · 25분 집중 / 5분 휴식</p>
+      <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+        <div>
+          <h1 className="text-base font-semibold text-gray-900">집중 타이머</h1>
+          <p className="text-xs text-gray-400 mt-0.5">뽀모도로 방식 · 25분 집중 / 5분 휴식</p>
+        </div>
+        {(todaySessions > 0 || history.some(d => d.sessions > 0)) && (
+          <button
+            onClick={() => {
+              if (!window.confirm('타이머 기록을 전부 초기화할까요?')) return
+              clearHistory()
+            }}
+            className="text-xs text-gray-400 border border-gray-200 rounded px-2.5 py-1 hover:border-red-300 hover:text-red-400 transition-colors"
+          >
+            기록 초기화
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
