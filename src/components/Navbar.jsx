@@ -28,6 +28,7 @@ export default function Navbar() {
   const [editingStudent, setEditingStudent] = useState(false)
   const [studentInput, setStudentInput] = useState('')
   const [admissionInput, setAdmissionInput] = useState('2024')
+  const [studentError, setStudentError] = useState('')
   const studentInputRef = useRef(null)
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Navbar() {
     if (editingStudent) {
       setStudentInput(currentUser?.studentId ?? '')
       setAdmissionInput(currentUser?.admissionYear || '2024')
+      setStudentError('')
       setTimeout(() => studentInputRef.current?.focus(), 0)
     }
   }, [editingStudent])
@@ -70,7 +72,12 @@ export default function Navbar() {
   }
 
   async function handleStudentSave() {
-    const payload = { studentId: studentInput.trim(), admissionYear: admissionInput }
+    const id = studentInput.trim()
+    if (!/^\d{7}$/.test(id)) {
+      setStudentError('7자리 숫자로 입력해주세요')
+      return
+    }
+    const payload = { studentId: id, admissionYear: admissionInput }
     dispatch({ type: 'SET_STUDENT', payload })
     await updateStudentInfo(payload.studentId, payload.admissionYear)
     setEditingStudent(false)
@@ -163,15 +170,23 @@ export default function Navbar() {
                   {/* 학생정보 */}
                   {editingStudent ? (
                     <div className="flex items-center gap-1">
-                      <input
-                        ref={studentInputRef}
-                        value={studentInput}
-                        onChange={e => setStudentInput(e.target.value)}
-                        onKeyDown={handleStudentKeyDown}
-                        maxLength={12}
-                        placeholder="학번"
-                        className="text-xs border border-blue-300 rounded px-2 py-0.5 w-20 focus:outline-none focus:border-blue-500"
-                      />
+                      <div className="flex flex-col">
+                        <input
+                          ref={studentInputRef}
+                          value={studentInput}
+                          onChange={e => {
+                            setStudentInput(e.target.value.replace(/\D/g, ''))
+                            setStudentError('')
+                          }}
+                          onKeyDown={handleStudentKeyDown}
+                          maxLength={7}
+                          placeholder="학번 7자리"
+                          className={`text-xs border rounded px-2 py-0.5 w-24 focus:outline-none ${studentError ? 'border-red-400 focus:border-red-400' : 'border-blue-300 focus:border-blue-500'}`}
+                        />
+                        {studentError && (
+                          <span className="text-[9px] text-red-400 mt-0.5">{studentError}</span>
+                        )}
+                      </div>
                       <select
                         value={admissionInput}
                         onChange={e => setAdmissionInput(e.target.value)}
