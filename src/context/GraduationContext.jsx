@@ -83,8 +83,10 @@ export function GraduationProvider({ children }) {
 
     getDoc(doc(db, 'users', currentUser.userId))
       .then(snap => {
-        const courses = snap.exists() && Array.isArray(snap.data().completedCourses)
-          ? snap.data().completedCourses
+        const data = snap.exists() ? snap.data() : {}
+        // studentId가 없는 계정은 과목 데이터를 로드하지 않음 (학생정보 미등록 상태)
+        const courses = data.studentId && Array.isArray(data.completedCourses)
+          ? data.completedCourses
           : []
         dispatch({ type: 'LOAD_COURSES', payload: courses })
         firestoreReadyRef.current = true
