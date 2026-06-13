@@ -105,6 +105,24 @@ export function AuthProvider({ children }) {
     } catch {}
   }
 
+  async function resetUserData() {
+    if (!currentUser) return
+    try {
+      await updateDoc(doc(db, 'users', currentUser.userId), {
+        studentId: '',
+        admissionYear: '2024',
+        completedCourses: [],
+        savedRoadmap: null,
+        timerHistory: {},
+      })
+      const updated = { ...currentUser, studentId: '', admissionYear: '2024' }
+      localStorage.setItem(SESSION_KEY, JSON.stringify(updated))
+      localStorage.removeItem('gradpath_my_roadmap')
+      localStorage.removeItem('gradpath_timer')
+      setCurrentUser(updated)
+    } catch {}
+  }
+
   async function updateNickname(newNickname) {
     if (!currentUser || !newNickname.trim()) return { success: false }
     try {
@@ -124,7 +142,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo, updateNickname }}>
+    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo, updateNickname, resetUserData }}>
       {children}
     </AuthContext.Provider>
   )

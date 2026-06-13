@@ -14,7 +14,7 @@ const links = [
 ]
 
 export default function Navbar() {
-  const { currentUser, loading, logout, updateNickname, updateStudentInfo } = useAuth()
+  const { currentUser, loading, logout, updateNickname, updateStudentInfo, resetUserData } = useAuth()
   const { dispatch } = useGraduationContext()
   const navigate = useNavigate()
 
@@ -89,9 +89,10 @@ export default function Navbar() {
   }
 
   async function handleStudentClear() {
-    if (!window.confirm('학생 정보 및 이수 과목을 모두 초기화할까요?')) return
+    if (!window.confirm('모든 학습 데이터(학생정보, 이수 과목, 로드맵, 타이머 기록)를 초기화할까요?')) return
     dispatch({ type: 'RESET' })
-    await updateStudentInfo('', '2024')
+    await resetUserData()
+    navigate('/')
   }
 
   return (
