@@ -46,6 +46,9 @@ function reducer(state, action) {
     case 'SIMULATE_RESET':
       return { ...state, simulatedCourses: [] }
 
+    case 'RESET':
+      return initialState
+
     default:
       return state
   }
@@ -65,11 +68,13 @@ export function GraduationProvider({ children }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
   }, [state])
 
-  // 로그인 시 Firestore에서 이수 과목 로드
+  // 로그인 시 Firestore에서 이수 과목 로드 / 로그아웃 시 초기화
   useEffect(() => {
     if (!currentUser) {
       loadedUserRef.current = null
       firestoreReadyRef.current = false
+      dispatch({ type: 'RESET' })
+      localStorage.removeItem(STORAGE_KEY)
       return
     }
     if (loadedUserRef.current === currentUser.userId) return
@@ -78,15 +83,16 @@ export function GraduationProvider({ children }) {
 
     getDoc(doc(db, 'users', currentUser.userId))
       .then(snap => {
-        if (snap.exists()) {
-          const data = snap.data()
-          if (Array.isArray(data.completedCourses) && data.completedCourses.length > 0) {
-            dispatch({ type: 'LOAD_COURSES', payload: data.completedCourses })
-          }
-        }
+        const courses = snap.exists() && Array.isArray(snap.data().completedCourses)
+          ? snap.data().completedCourses
+          : []
+        dispatch({ type: 'LOAD_COURSES', payload: courses })
         firestoreReadyRef.current = true
       })
-      .catch(() => { firestoreReadyRef.current = true })
+      .catch(() => {
+        dispatch({ type: 'LOAD_COURSES', payload: [] })
+        firestoreReadyRef.current = true
+      })
   }, [currentUser?.userId])
 
   // 이수 과목 변경 시 Firestore 동기화 (debounce 800ms, 초기 로드 후에만)

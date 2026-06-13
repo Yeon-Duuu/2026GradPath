@@ -50,17 +50,21 @@ export function useTimer(userId) {
   })
   const [history, setHistory] = useState(() => buildHistory(loadStorage()))
 
-  // 로그인 시 Firestore에서 타이머 기록 로드 (localStorage보다 우선)
+  // 로그인/로그아웃 시 타이머 기록 동기화
   useEffect(() => {
-    if (!userId) return
+    if (!userId) {
+      localStorage.removeItem(STORAGE_KEY)
+      setTodaySessions(0)
+      setTodayMinutes(0)
+      setHistory(buildHistory({}))
+      return
+    }
     getDoc(doc(db, 'users', userId)).then(snap => {
-      if (snap.exists() && snap.data().timerHistory) {
-        const stored = snap.data().timerHistory
-        saveStorage(stored)
-        setTodaySessions(stored[getTodayKey()]?.sessions ?? 0)
-        setTodayMinutes(stored[getTodayKey()]?.minutes ?? 0)
-        setHistory(buildHistory(stored))
-      }
+      const stored = snap.exists() && snap.data().timerHistory ? snap.data().timerHistory : {}
+      saveStorage(stored)
+      setTodaySessions(stored[getTodayKey()]?.sessions ?? 0)
+      setTodayMinutes(stored[getTodayKey()]?.minutes ?? 0)
+      setHistory(buildHistory(stored))
     }).catch(() => {})
   }, [userId])
 

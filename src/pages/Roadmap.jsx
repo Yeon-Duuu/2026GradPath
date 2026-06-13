@@ -289,15 +289,18 @@ export default function Roadmap() {
     }
   })
 
-  // 로그인 시 Firestore에서 저장한 로드맵 로드
+  // 로그인/로그아웃 시 저장 로드맵 동기화
   useEffect(() => {
-    if (!currentUser) return
+    if (!currentUser) {
+      setSavedPlan(null)
+      localStorage.removeItem(STORAGE_KEY)
+      return
+    }
     getDoc(doc(db, 'users', currentUser.userId)).then(snap => {
-      if (snap.exists() && snap.data().savedRoadmap) {
-        const plan = snap.data().savedRoadmap
-        setSavedPlan(plan)
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(plan))
-      }
+      const plan = snap.exists() && snap.data().savedRoadmap ? snap.data().savedRoadmap : null
+      setSavedPlan(plan)
+      if (plan) localStorage.setItem(STORAGE_KEY, JSON.stringify(plan))
+      else localStorage.removeItem(STORAGE_KEY)
     }).catch(() => {})
   }, [currentUser?.userId])
 
