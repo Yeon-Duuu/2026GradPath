@@ -111,6 +111,7 @@ export default function Dashboard() {
   const badges = useBadge({ statusByCategory, isGraduatable })
   const [courseQuery, setCourseQuery] = useState('')
   const [courseTypeFilter, setCourseTypeFilter] = useState('전체')
+  const [warningFilter, setWarningFilter] = useState('전체')
   const [addedToast, setAddedToast] = useState('')
   const toastTimerRef = useRef(null)
 
@@ -381,18 +382,38 @@ export default function Dashboard() {
       </Section>
 
       {/* Warnings */}
-      {warnings.length > 0 && (
-        <Section title="미충족 항목">
-          <ul className="space-y-2">
-            {warnings.map((w, i) => (
-              <li key={i} className="text-xs text-gray-600 flex gap-2 items-start">
-                <span className="text-gray-300 shrink-0 mt-px">—</span>
-                <span>{w}</span>
-              </li>
-            ))}
-          </ul>
-        </Section>
-      )}
+      {warnings.length > 0 && (() => {
+        const getTag = w => { const m = w.match(/^\[(.+?)\]/); return m ? m[1] : '기타' }
+        const tags = ['전체', ...Array.from(new Set(warnings.map(getTag)))]
+        const filtered = warningFilter === '전체' ? warnings : warnings.filter(w => getTag(w) === warningFilter)
+        return (
+          <Section title={`미충족 항목 (${warnings.length})`}>
+            <div className="flex gap-1 flex-wrap mb-3">
+              {tags.map(t => (
+                <button
+                  key={t}
+                  onClick={() => setWarningFilter(t)}
+                  className={`px-2 py-0.5 text-[10px] rounded border transition-colors ${
+                    warningFilter === t
+                      ? 'bg-blue-500 text-white border-blue-500'
+                      : 'border-gray-200 text-gray-400 hover:border-gray-400'
+                  }`}
+                >
+                  {t}{t !== '전체' && ` ${warnings.filter(w => getTag(w) === t).length}`}
+                </button>
+              ))}
+            </div>
+            <ul className="space-y-2">
+              {filtered.map((w, i) => (
+                <li key={i} className="text-xs text-gray-600 flex gap-2 items-start">
+                  <span className="text-gray-300 shrink-0 mt-px">—</span>
+                  <span>{w}</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        )
+      })()}
 
       {/* Completed Courses */}
       <Section
