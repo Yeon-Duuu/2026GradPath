@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/context/AuthContext'
+import { useGraduationContext } from '@/context/GraduationContext'
+
+const ADMISSION_YEARS = Array.from({ length: 12 }, (_, i) => String(2026 - i))
 
 const links = [
   { to: '/', label: '대시보드' },
@@ -11,12 +14,21 @@ const links = [
 ]
 
 export default function Navbar() {
-  const { currentUser, loading, logout, updateNickname } = useAuth()
+  const { currentUser, loading, logout, updateNickname, updateStudentInfo } = useAuth()
+  const { dispatch } = useGraduationContext()
   const navigate = useNavigate()
+
+  // 닉네임 수정
   const [editing, setEditing] = useState(false)
   const [nicknameInput, setNicknameInput] = useState('')
   const [nicknameError, setNicknameError] = useState('')
   const inputRef = useRef(null)
+
+  // 학생정보 수정
+  const [editingStudent, setEditingStudent] = useState(false)
+  const [studentInput, setStudentInput] = useState('')
+  const [admissionInput, setAdmissionInput] = useState('2024')
+  const studentInputRef = useRef(null)
 
   useEffect(() => {
     if (editing) {
@@ -25,6 +37,14 @@ export default function Navbar() {
       setTimeout(() => inputRef.current?.focus(), 0)
     }
   }, [editing])
+
+  useEffect(() => {
+    if (editingStudent) {
+      setStudentInput(currentUser?.studentId ?? '')
+      setAdmissionInput(currentUser?.admissionYear || '2024')
+      setTimeout(() => studentInputRef.current?.focus(), 0)
+    }
+  }, [editingStudent])
 
   function handleLogout() {
     logout()
@@ -47,6 +67,24 @@ export default function Navbar() {
   function handleKeyDown(e) {
     if (e.key === 'Enter') handleNicknameSave()
     if (e.key === 'Escape') setEditing(false)
+  }
+
+  async function handleStudentSave() {
+    const payload = { studentId: studentInput.trim(), admissionYear: admissionInput }
+    dispatch({ type: 'SET_STUDENT', payload })
+    await updateStudentInfo(payload.studentId, payload.admissionYear)
+    setEditingStudent(false)
+  }
+
+  function handleStudentKeyDown(e) {
+    if (e.key === 'Enter') handleStudentSave()
+    if (e.key === 'Escape') setEditingStudent(false)
+  }
+
+  async function handleStudentClear() {
+    if (!window.confirm('학생 정보를 초기화할까요?')) return
+    dispatch({ type: 'SET_STUDENT', payload: { studentId: '', admissionYear: '2024' } })
+    await updateStudentInfo('', '2024')
   }
 
   return (
@@ -79,23 +117,12 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* 로그인 상태 */}
+          {/* 우측 영역 */}
           {!loading && (
             <div className="flex items-center gap-2 shrink-0 ml-auto">
-              <NavLink
-                to="/manual"
-                className={({ isActive }) =>
-                  `text-[10px] px-2 py-1 rounded border transition-colors whitespace-nowrap ${
-                    isActive
-                      ? 'border-gray-400 text-gray-700 bg-gray-50'
-                      : 'border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-600'
-                  }`
-                }
-              >
-                설명서
-              </NavLink>
               {currentUser ? (
                 <>
+                  {/* 닉네임 */}
                   {editing ? (
                     <div className="flex items-center gap-1">
                       <input
@@ -132,6 +159,74 @@ export default function Navbar() {
                       <span className="ml-1 text-[9px] text-gray-300">✎</span>
                     </button>
                   )}
+
+                  {/* 학생정보 */}
+                  {editingStudent ? (
+                    <div className="flex items-center gap-1">
+                      <input
+                        ref={studentInputRef}
+                        value={studentInput}
+                        onChange={e => setStudentInput(e.target.value)}
+                        onKeyDown={handleStudentKeyDown}
+                        maxLength={12}
+                        placeholder="학번"
+                        className="text-xs border border-blue-300 rounded px-2 py-0.5 w-20 focus:outline-none focus:border-blue-500"
+                      />
+                      <select
+                        value={admissionInput}
+                        onChange={e => setAdmissionInput(e.target.value)}
+                        className="text-xs border border-blue-300 rounded px-1 py-0.5 focus:outline-none focus:border-blue-500 bg-white"
+                      >
+                        {ADMISSION_YEARS.map(y => (
+                          <option key={y} value={y}>{y}</option>
+                        ))}
+                      </select>
+                      <button
+                        onClick={handleStudentSave}
+                        className="text-[10px] text-white bg-blue-500 rounded px-2 py-1 hover:bg-blue-600"
+                      >
+                        저장
+                      </button>
+                      <button
+                        onClick={() => setEditingStudent(false)}
+                        className="text-[10px] text-gray-400 hover:text-gray-600"
+                      >
+                        취소
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => setEditingStudent(true)}
+                        className="text-[10px] text-gray-400 border border-gray-200 rounded px-2 py-1 hover:border-gray-400 hover:text-gray-600 transition-colors whitespace-nowrap"
+                        title="학번 및 입학연도 수정"
+                      >
+                        학생정보
+                      </button>
+                      <button
+                        onClick={handleStudentClear}
+                        className="text-[10px] text-gray-400 border border-gray-200 rounded px-2 py-1 hover:border-red-300 hover:text-red-400 transition-colors whitespace-nowrap"
+                        title="학생 정보 초기화"
+                      >
+                        초기화
+                      </button>
+                    </>
+                  )}
+
+                  {/* 설명서 */}
+                  <NavLink
+                    to="/manual"
+                    className={({ isActive }) =>
+                      `text-[10px] px-2 py-1 rounded border transition-colors whitespace-nowrap ${
+                        isActive
+                          ? 'border-gray-400 text-gray-700 bg-gray-50'
+                          : 'border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-600'
+                      }`
+                    }
+                  >
+                    설명서
+                  </NavLink>
+
                   <button
                     onClick={handleLogout}
                     className="text-[10px] text-gray-400 border border-gray-200 rounded px-2 py-1 hover:border-gray-400 hover:text-gray-600 transition-colors whitespace-nowrap"
@@ -140,18 +235,32 @@ export default function Navbar() {
                   </button>
                 </>
               ) : (
-                <NavLink
-                  to="/login"
-                  className={({ isActive }) =>
-                    `text-[11px] font-medium px-2.5 py-1 rounded border transition-colors whitespace-nowrap ${
-                      isActive
-                        ? 'bg-blue-500 text-white border-blue-500'
-                        : 'text-blue-500 border-blue-200 hover:bg-blue-50'
-                    }`
-                  }
-                >
-                  로그인
-                </NavLink>
+                <>
+                  <NavLink
+                    to="/manual"
+                    className={({ isActive }) =>
+                      `text-[10px] px-2 py-1 rounded border transition-colors whitespace-nowrap ${
+                        isActive
+                          ? 'border-gray-400 text-gray-700 bg-gray-50'
+                          : 'border-gray-200 text-gray-400 hover:border-gray-400 hover:text-gray-600'
+                      }`
+                    }
+                  >
+                    설명서
+                  </NavLink>
+                  <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                      `text-[11px] font-medium px-2.5 py-1 rounded border transition-colors whitespace-nowrap ${
+                        isActive
+                          ? 'bg-blue-500 text-white border-blue-500'
+                          : 'text-blue-500 border-blue-200 hover:bg-blue-50'
+                      }`
+                    }
+                  >
+                    로그인
+                  </NavLink>
+                </>
               )}
             </div>
           )}
