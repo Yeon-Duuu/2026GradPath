@@ -54,7 +54,7 @@ export default function BoardReply() {
         <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-1.5">원글</p>
         <p className="text-xs font-medium text-gray-800 mb-2">{post.title}</p>
         <p className="text-xs text-gray-500 line-clamp-4 whitespace-pre-wrap leading-relaxed">{post.content}</p>
-        <p className="text-[10px] text-gray-400 mt-2">{post.authorNickname}</p>
+        <p className="text-[10px] text-gray-400 mt-2">익명</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
