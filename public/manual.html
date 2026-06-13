@@ -151,6 +151,15 @@
     color: #111827;
     font-weight: 600;
   }
+  a.nav-item {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  a.nav-item:hover {
+    border-color: #9ca3af;
+    color: #374151;
+  }
 
   /* Level table */
   table {
@@ -365,14 +374,14 @@
   <hr />
 
   <!-- 2. 대시보드 -->
-  <h2>2. 대시보드 (/)</h2>
+  <h2 id="dashboard">2. 대시보드 (/)</h2>
 
   <div class="nav-bar">
     <span class="nav-item active">대시보드</span>
-    <span class="nav-item">시뮬레이터</span>
-    <span class="nav-item">로드맵</span>
-    <span class="nav-item">게시판</span>
-    <span class="nav-item">타이머</span>
+    <a class="nav-item" href="#simulator">시뮬레이터</a>
+    <a class="nav-item" href="#roadmap">로드맵</a>
+    <a class="nav-item" href="#board">게시판</a>
+    <a class="nav-item" href="#timer">타이머</a>
   </div>
 
   <p>졸업 요건 전체 현황을 한눈에 볼 수 있는 메인 페이지입니다.</p>
@@ -450,14 +459,14 @@
   <hr />
 
   <!-- 3. 시뮬레이터 -->
-  <h2>3. 시뮬레이터 (/simulate)</h2>
+  <h2 id="simulator">3. 시뮬레이터 (/simulate)</h2>
 
   <div class="nav-bar">
-    <span class="nav-item">대시보드</span>
+    <a class="nav-item" href="#dashboard">대시보드</a>
     <span class="nav-item active">시뮬레이터</span>
-    <span class="nav-item">로드맵</span>
-    <span class="nav-item">게시판</span>
-    <span class="nav-item">타이머</span>
+    <a class="nav-item" href="#roadmap">로드맵</a>
+    <a class="nav-item" href="#board">게시판</a>
+    <a class="nav-item" href="#timer">타이머</a>
   </div>
 
   <p>"다음 학기에 이 과목들을 들으면 졸업할 수 있을까?"를 미리 확인하는 기능입니다. <strong>실제 이수 내역은 변경되지 않습니다.</strong></p>
@@ -509,14 +518,14 @@
   <hr />
 
   <!-- 4. 로드맵 -->
-  <h2>4. 로드맵 (/roadmap)</h2>
+  <h2 id="roadmap">4. 로드맵 (/roadmap)</h2>
 
   <div class="nav-bar">
-    <span class="nav-item">대시보드</span>
-    <span class="nav-item">시뮬레이터</span>
+    <a class="nav-item" href="#dashboard">대시보드</a>
+    <a class="nav-item" href="#simulator">시뮬레이터</a>
     <span class="nav-item active">로드맵</span>
-    <span class="nav-item">게시판</span>
-    <span class="nav-item">타이머</span>
+    <a class="nav-item" href="#board">게시판</a>
+    <a class="nav-item" href="#timer">타이머</a>
   </div>
 
   <p>취업, 대학원, 자격증 취득 등 다양한 목표별 선배들의 로드맵을 참고할 수 있습니다.</p>
@@ -539,13 +548,13 @@
   <hr />
 
   <!-- 5. 타이머 -->
-  <h2>5. 집중 타이머 (/timer)</h2>
+  <h2 id="timer">5. 집중 타이머 (/timer)</h2>
 
   <div class="nav-bar">
-    <span class="nav-item">대시보드</span>
-    <span class="nav-item">시뮬레이터</span>
-    <span class="nav-item">로드맵</span>
-    <span class="nav-item">게시판</span>
+    <a class="nav-item" href="#dashboard">대시보드</a>
+    <a class="nav-item" href="#simulator">시뮬레이터</a>
+    <a class="nav-item" href="#roadmap">로드맵</a>
+    <a class="nav-item" href="#board">게시판</a>
     <span class="nav-item active">타이머</span>
   </div>
 
@@ -575,15 +584,15 @@
   <hr />
 
   <!-- 6. 로그인 / 회원가입 -->
-  <h2>6. 로그인 / 회원가입 (/login)</h2>
+  <h2 id="login">6. 로그인 / 회원가입 (/login)</h2>
 
   <div class="nav-bar">
-    <span class="nav-item">대시보드</span>
-    <span class="nav-item">시뮬레이터</span>
-    <span class="nav-item">로드맵</span>
-    <span class="nav-item">게시판</span>
+    <a class="nav-item" href="#dashboard">대시보드</a>
+    <a class="nav-item" href="#simulator">시뮬레이터</a>
+    <a class="nav-item" href="#roadmap">로드맵</a>
+    <a class="nav-item" href="#board">게시판</a>
     <span class="nav-item active">로그인</span>
-    <span class="nav-item">타이머</span>
+    <a class="nav-item" href="#timer">타이머</a>
   </div>
 
   <p>GradPath의 모든 기능은 <strong>로그인 후에만 사용 가능</strong>합니다. 로그인하면 이수 과목, 학생 정보, 로드맵, 타이머 기록이 계정에 연동되어 다기기에서도 동일하게 유지됩니다.</p>
@@ -646,15 +655,15 @@
   <hr />
 
   <!-- 7. 선후배 게시판 -->
-  <h2>7. 선후배 게시판 (/board)</h2>
+  <h2 id="board">7. 선후배 게시판 (/board)</h2>
 
   <div class="nav-bar">
-    <span class="nav-item">대시보드</span>
-    <span class="nav-item">시뮬레이터</span>
-    <span class="nav-item">로드맵</span>
+    <a class="nav-item" href="#dashboard">대시보드</a>
+    <a class="nav-item" href="#simulator">시뮬레이터</a>
+    <a class="nav-item" href="#roadmap">로드맵</a>
     <span class="nav-item active">게시판</span>
-    <span class="nav-item">로그인</span>
-    <span class="nav-item">타이머</span>
+    <a class="nav-item" href="#login">로그인</a>
+    <a class="nav-item" href="#timer">타이머</a>
   </div>
 
   <p>졸업 후 진로, 취업, 대학원, 자격증 등에 대해 선배에게 질문하고 답변을 받을 수 있는 실시간 공유 게시판입니다. <strong>로그인 후 사용 가능하며, 모든 사용자가 같은 게시판을 공유합니다.</strong></p>
