@@ -289,6 +289,7 @@ export default function Board() {
   const [fetchError, setFetchError] = useState(null)
   const [selectedPost, setSelectedPost] = useState(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [tab, setTab] = useState('전체')
   const [pendingDelete, setPendingDelete] = useState(null)
   const [roadmapPost, setRoadmapPost] = useState(null)
   const [deleteError, setDeleteError] = useState('')
@@ -350,6 +351,7 @@ export default function Board() {
   }
 
   const filtered = posts.filter(p => {
+    if (tab === '내 글' && p.authorId !== currentUser?.userId) return false
     if (!searchQuery.trim()) return true
     const q = searchQuery.toLowerCase()
     return (
@@ -388,7 +390,7 @@ export default function Board() {
         </div>
       )}
 
-      <div className="mb-4">
+      <div className="mb-4 space-y-2">
         <input
           type="text"
           value={searchQuery}
@@ -396,6 +398,23 @@ export default function Board() {
           placeholder="제목, 내용 검색"
           className="w-full border border-gray-200 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-400"
         />
+        {currentUser && (
+          <div className="flex gap-1">
+            {['전체', '내 글'].map(t => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={`px-3 py-1 text-xs rounded-md border transition-colors ${
+                  tab === t
+                    ? 'bg-blue-500 text-white border-blue-500'
+                    : 'text-gray-500 border-gray-200 hover:border-gray-400'
+                }`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {fetchError ? (

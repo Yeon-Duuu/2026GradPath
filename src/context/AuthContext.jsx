@@ -105,13 +105,26 @@ export function AuthProvider({ children }) {
     } catch {}
   }
 
+  async function updateNickname(newNickname) {
+    if (!currentUser || !newNickname.trim()) return { success: false }
+    try {
+      await updateDoc(doc(db, 'users', currentUser.userId), { nickname: newNickname.trim() })
+      const updated = { ...currentUser, nickname: newNickname.trim() }
+      localStorage.setItem(SESSION_KEY, JSON.stringify(updated))
+      setCurrentUser(updated)
+      return { success: true }
+    } catch {
+      return { success: false, error: '변경에 실패했습니다.' }
+    }
+  }
+
   function logout() {
     localStorage.removeItem(SESSION_KEY)
     setCurrentUser(null)
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo }}>
+    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo, updateNickname }}>
       {children}
     </AuthContext.Provider>
   )

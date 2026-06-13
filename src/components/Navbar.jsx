@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '@/context/AuthContext'
 
@@ -10,12 +11,42 @@ const links = [
 ]
 
 export default function Navbar() {
-  const { currentUser, loading, logout } = useAuth()
+  const { currentUser, loading, logout, updateNickname } = useAuth()
   const navigate = useNavigate()
+  const [editing, setEditing] = useState(false)
+  const [nicknameInput, setNicknameInput] = useState('')
+  const [nicknameError, setNicknameError] = useState('')
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    if (editing) {
+      setNicknameInput(currentUser?.nickname ?? '')
+      setNicknameError('')
+      setTimeout(() => inputRef.current?.focus(), 0)
+    }
+  }, [editing])
 
   function handleLogout() {
     logout()
     navigate('/')
+  }
+
+  async function handleNicknameSave() {
+    if (!nicknameInput.trim()) {
+      setNicknameError('닉네임을 입력해주세요.')
+      return
+    }
+    const result = await updateNickname(nicknameInput.trim())
+    if (result?.success === false) {
+      setNicknameError(result.error ?? '변경에 실패했습니다.')
+      return
+    }
+    setEditing(false)
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') handleNicknameSave()
+    if (e.key === 'Escape') setEditing(false)
   }
 
   return (
@@ -48,7 +79,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* 로그인 상태 — loading 중엔 렌더링 생략해 깜빡임 방지 */}
+          {/* 로그인 상태 */}
           {!loading && (
             <div className="flex items-center gap-2 shrink-0 ml-auto">
               <NavLink
@@ -65,9 +96,42 @@ export default function Navbar() {
               </NavLink>
               {currentUser ? (
                 <>
-                  <span className="text-[11px] text-gray-500 whitespace-nowrap">
-                    <span className="font-medium text-gray-700">{currentUser.nickname}</span>
-                  </span>
+                  {editing ? (
+                    <div className="flex items-center gap-1">
+                      <input
+                        ref={inputRef}
+                        value={nicknameInput}
+                        onChange={e => setNicknameInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        maxLength={20}
+                        className="text-xs border border-blue-300 rounded px-2 py-0.5 w-28 focus:outline-none focus:border-blue-500"
+                      />
+                      <button
+                        onClick={handleNicknameSave}
+                        className="text-[10px] text-white bg-blue-500 rounded px-2 py-1 hover:bg-blue-600"
+                      >
+                        저장
+                      </button>
+                      <button
+                        onClick={() => setEditing(false)}
+                        className="text-[10px] text-gray-400 hover:text-gray-600"
+                      >
+                        취소
+                      </button>
+                      {nicknameError && (
+                        <span className="text-[10px] text-red-400">{nicknameError}</span>
+                      )}
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => setEditing(true)}
+                      className="text-[11px] text-gray-500 hover:text-blue-500 transition-colors whitespace-nowrap"
+                      title="닉네임 변경"
+                    >
+                      <span className="font-medium text-gray-700">{currentUser.nickname}</span>
+                      <span className="ml-1 text-[9px] text-gray-300">✎</span>
+                    </button>
+                  )}
                   <button
                     onClick={handleLogout}
                     className="text-[10px] text-gray-400 border border-gray-200 rounded px-2 py-1 hover:border-gray-400 hover:text-gray-600 transition-colors whitespace-nowrap"
