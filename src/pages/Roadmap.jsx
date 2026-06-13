@@ -1,3 +1,4 @@
+// 로드맵 페이지: 목표별 선배 로드맵을 필터링하고 상세 정보를 확인하는 페이지
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { collection, onSnapshot, deleteDoc, addDoc, doc, serverTimestamp, updateDoc, getDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'

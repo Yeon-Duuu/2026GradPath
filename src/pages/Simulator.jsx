@@ -1,3 +1,4 @@
+// What-if 시뮬레이터: 수강 예정 과목을 추가했을 때 졸업 가능 여부 변화를 확인하는 페이지
 import { useState, useCallback, useMemo, useRef } from 'react'
 import { useSimulator } from '@/hooks/useSimulator'
 import Button from '@/components/Button'
