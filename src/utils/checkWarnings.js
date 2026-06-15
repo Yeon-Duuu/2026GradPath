@@ -10,8 +10,11 @@ export function checkWarnings(statusByCategory, completedCourses, requirements, 
 
   for (const [cat, status] of Object.entries(statusByCategory)) {
     const requiredCourses = requirements[cat]?.courses || []
+    // 필수 과목을 모두 이수하면 학점 요건도 충족되는 경우엔 학점 부족 경고를 별도 표시하지 않음
+    const requiredCoursesCredits = requiredCourses.reduce((sum, id) => sum + (allCourses[id]?.credits || 0), 0)
+    const coursesSufficeForCredits = requiredCourses.length > 0 && requiredCoursesCredits >= status.required
 
-    if (!status.isSatisfied && requiredCourses.length === 0) {
+    if (!status.isSatisfied && !coursesSufficeForCredits) {
       const remaining = status.required - status.completed
       warnings.push(`[${cat}] 이수 학점 부족: ${remaining}학점 추가 이수 필요`)
     }

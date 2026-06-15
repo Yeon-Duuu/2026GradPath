@@ -160,7 +160,7 @@
     "maxCreditsPerSemester": 20
   },
   "2015": {
-    "_note": "2015학년도 입학생 — 졸업 130학점. 공통교양 12, 균형교양 15(6개 영역 중 5개), 전공이수합계 69(전필7+전선62), 자선 34",
+    "_note": "2015학년도 입학생 — 졸업 130학점(대학생활과진로설계 1학점 자동이수 제외 시 앱 추적 129학점). 전공이수합계 69(전필6+전선62+대학생활1), 자선 34",
     "교필": {
       "required": 12,
       "courses": [
@@ -187,11 +187,11 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2016": {
-    "_note": "2016학년도 입학생 — 졸업 130학점. 공통교양 12, 균형교양 15(6개 영역 중 5개), 전공이수합계 69(전필7+전선62), 자선 34",
+    "_note": "2016학년도 입학생 — 졸업 130학점(앱 추적 129학점). 공통교양 12, 균형교양 15, 전공이수합계 69(전필6+전선62+대학생활1), 자선 34",
     "교필": {
       "required": 12,
       "courses": [
@@ -218,7 +218,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2017": {
@@ -249,7 +249,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2018": {
@@ -280,7 +280,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2019": {
@@ -311,7 +311,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2020": {
@@ -342,7 +342,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2021": {
@@ -373,7 +373,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2022": {
@@ -406,7 +406,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2023": {
@@ -439,7 +439,7 @@
     "자선": {
       "required": 34
     },
-    "totalRequired": 130,
+    "totalRequired": 129,
     "maxCreditsPerSemester": 20
   },
   "2024": {

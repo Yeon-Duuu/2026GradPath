@@ -53,6 +53,9 @@ export function useTimer(userId) {
   // 로그인/로그아웃 시 타이머 기록 동기화
   useEffect(() => {
     if (!userId) {
+      setRunning(false)
+      setSecondsLeft(FOCUS_MINUTES * 60)
+      setIsBreak(false)
       localStorage.removeItem(STORAGE_KEY)
       setTodaySessions(0)
       setTodayMinutes(0)

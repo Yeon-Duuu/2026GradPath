@@ -332,11 +332,12 @@ export default function Roadmap() {
   const filtered = allRoadmaps.filter(r => filter === '전체' || r.goal === filter)
 
   const handleSave = useCallback((roadmap) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(roadmap))
-    setSavedPlan(roadmap)
+    const { _isAdmin, ...saveData } = roadmap
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(saveData))
+    setSavedPlan(saveData)
     setSaveToast(roadmap.name)
     if (currentUser) {
-      updateDoc(doc(db, 'users', currentUser.userId), { savedRoadmap: roadmap }).catch(() => {})
+      updateDoc(doc(db, 'users', currentUser.userId), { savedRoadmap: saveData }).catch(() => {})
     }
   }, [currentUser])
 
