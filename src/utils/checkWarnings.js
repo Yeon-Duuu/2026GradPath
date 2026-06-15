@@ -9,12 +9,12 @@ export function checkWarnings(statusByCategory, completedCourses, requirements, 
   const warnings = []
 
   for (const [cat, status] of Object.entries(statusByCategory)) {
-    if (!status.isSatisfied) {
+    const requiredCourses = requirements[cat]?.courses || []
+
+    if (!status.isSatisfied && requiredCourses.length === 0) {
       const remaining = status.required - status.completed
       warnings.push(`[${cat}] 이수 학점 부족: ${remaining}학점 추가 이수 필요`)
     }
-
-    const requiredCourses = requirements[cat]?.courses || []
     for (const courseId of requiredCourses) {
       if (!completedCourses.includes(courseId)) {
         const name = allCourses[courseId]?.name || courseId
