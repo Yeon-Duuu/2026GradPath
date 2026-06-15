@@ -294,6 +294,7 @@ export default function Board() {
   const [roadmapPost, setRoadmapPost] = useState(null)
   const [deleteError, setDeleteError] = useState('')
   const deleteErrorTimer = useRef(null)
+  useEffect(() => () => { if (deleteErrorTimer.current) clearTimeout(deleteErrorTimer.current) }, [])
 
   useEffect(() => {
     const q = query(collection(db, 'posts'), orderBy('createdAt', 'desc'))

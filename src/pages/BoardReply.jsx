@@ -67,9 +67,11 @@ export default function BoardReply() {
             onChange={e => setContent(e.target.value)}
             placeholder="답변을 자유롭게 작성하세요"
             rows={16}
+            maxLength={2000}
             autoFocus
             className="w-full border border-gray-200 rounded-md px-3 py-2 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none leading-relaxed"
           />
+          <p className="text-[10px] text-gray-400 mt-1 text-right">{content.length}/2000</p>
         </div>
 
         {error && <p className="text-xs text-red-500">{error}</p>}

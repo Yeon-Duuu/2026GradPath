@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
       const adminRef = doc(db, 'users', 'cmd')
       const snap = await getDoc(adminRef)
       if (!snap.exists()) {
-        const hashed = await hashPassword('1234')
+        const hashed = await hashPassword(import.meta.env.VITE_ADMIN_PASSWORD ?? 'GradPath@Admin2024!')
         await setDoc(adminRef, { password: hashed, nickname: '관리자', isAdmin: true })
       }
       sessionStorage.setItem('gradpath_admin_checked', '1')
@@ -73,11 +73,7 @@ export function AuthProvider({ children }) {
       const hashed = await hashPassword(password)
 
       if (data.password !== hashed) {
-        // 기존 평문 저장 계정 호환 처리 → 로그인 성공 시 해시로 자동 마이그레이션
-        if (data.password !== password) {
-          return { success: false, error: '비밀번호가 올바르지 않습니다.' }
-        }
-        await updateDoc(ref, { password: hashed })
+        return { success: false, error: '비밀번호가 올바르지 않습니다.' }
       }
 
       const user = {

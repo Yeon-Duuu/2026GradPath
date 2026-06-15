@@ -280,6 +280,7 @@ export default function Roadmap() {
   const [pendingDeleteId, setPendingDeleteId] = useState(null)
   const [deleteError, setDeleteError] = useState('')
   const deleteErrorTimer = useRef(null)
+  useEffect(() => () => { if (deleteErrorTimer.current) clearTimeout(deleteErrorTimer.current) }, [])
   const [savedPlan, setSavedPlan] = useState(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY)

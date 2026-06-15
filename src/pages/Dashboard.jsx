@@ -128,7 +128,7 @@ export default function Dashboard() {
         },
       })
     }
-  }, [currentUser?.userId])
+  }, [currentUser?.userId, dispatch])
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     defaultValues: {
