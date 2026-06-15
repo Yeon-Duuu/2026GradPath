@@ -22,7 +22,7 @@ export default function BoardReply() {
     if (!content.trim() || submitting) return
     setSubmitting(true)
     const reply = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       content: content.trim(),
       authorNickname: currentUser.nickname,
       authorId: currentUser.userId,
