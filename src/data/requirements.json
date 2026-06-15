@@ -175,17 +175,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "27885"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -209,17 +206,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -243,17 +237,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -277,17 +268,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -311,17 +299,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -345,17 +330,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -379,17 +361,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -415,17 +394,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
@@ -451,17 +427,14 @@
       "required": 15
     },
     "전필": {
-      "required": 15,
+      "required": 6,
       "courses": [
-        "25502",
-        "22017",
-        "21598",
         "34412",
         "34981"
       ]
     },
     "전선": {
-      "required": 54
+      "required": 62
     },
     "자선": {
       "required": 34
