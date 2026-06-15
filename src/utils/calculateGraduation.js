@@ -8,13 +8,25 @@ export function calculateGraduation(completedCourses, requirements, allCourses) 
   const categories = ['전필', '전선', '교필', '교선', '자선']
   const status = {}
 
+  // requirements[cat].courses에 명시된 과목은 courses.json의 type과 무관하게
+  // 해당 카테고리 학점으로 산입 (예: 전필 필수 과목이 courses.json에 전선으로 등록된 경우)
+  const categoryOverride = {}
+  for (const cat of categories) {
+    for (const courseId of requirements[cat]?.courses || []) {
+      if (allCourses[courseId]?.type !== cat) {
+        categoryOverride[courseId] = cat
+      }
+    }
+  }
+
   for (const cat of categories) {
     const req = requirements[cat]
     if (!req) continue
 
-    const completedInCat = completedCourses.filter(
-      id => allCourses[id]?.type === cat
-    )
+    const completedInCat = completedCourses.filter(id => {
+      if (categoryOverride[id]) return categoryOverride[id] === cat
+      return allCourses[id]?.type === cat
+    })
     const completedCredits = completedInCat.reduce(
       (sum, id) => sum + (allCourses[id]?.credits || 0), 0
     )

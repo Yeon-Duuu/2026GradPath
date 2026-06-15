@@ -23,14 +23,17 @@ export function useGraduation() {
 
   const totalRequired = requirements.totalRequired
 
-  const isGraduatable = useMemo(
-    () => totalCompleted >= totalRequired && Object.values(statusByCategory).every(s => s.isSatisfied),
-    [totalCompleted, totalRequired, statusByCategory]
-  )
-
   const warnings = useMemo(
     () => checkWarnings(statusByCategory, completedCourses, requirements, coursesData),
     [statusByCategory, completedCourses, requirements]
+  )
+
+  const isGraduatable = useMemo(
+    () =>
+      totalCompleted >= totalRequired &&
+      Object.values(statusByCategory).every(s => s.isSatisfied) &&
+      warnings.every(w => !w.includes('필수 과목 미이수')),
+    [totalCompleted, totalRequired, statusByCategory, warnings]
   )
 
   return {

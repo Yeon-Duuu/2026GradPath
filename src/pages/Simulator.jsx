@@ -112,6 +112,29 @@ export default function Simulator() {
   const [errorMsg, setErrorMsg] = useState('')
   const errorTimerRef = useRef(null)
 
+  const filteredCourses = useMemo(() => {
+    if (!state.studentId) return []
+    const q = searchQuery.trim().toLowerCase()
+    const admYear = parseInt(state.admissionYear)
+    return Object.entries(allCourses).filter(([id, c]) => {
+      if (c.type === '교선' && c.openYears) {
+        if (!c.openYears.includes(admYear)) return false
+        if (!q) return false
+      }
+      if (!q) return true
+      return c.name.toLowerCase().includes(q) || id.toLowerCase().includes(q) || c.type.includes(q)
+    })
+  }, [searchQuery, allCourses, state.admissionYear, state.studentId])
+
+  const handleAdd = useCallback((courseId) => {
+    const result = addToSimulation(courseId)
+    if (!result.success) {
+      setErrorMsg(`선수과목 필요: ${result.missing.join(', ')}`)
+      if (errorTimerRef.current) clearTimeout(errorTimerRef.current)
+      errorTimerRef.current = setTimeout(() => setErrorMsg(''), 3000)
+    }
+  }, [addToSimulation])
+
   if (!state.studentId) {
     return (
       <div className="space-y-5">
@@ -134,28 +157,6 @@ export default function Simulator() {
       </div>
     )
   }
-
-  const filteredCourses = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase()
-    const admYear = parseInt(state.admissionYear)
-    return Object.entries(allCourses).filter(([id, c]) => {
-      if (c.type === '교선' && c.openYears) {
-        if (!c.openYears.includes(admYear)) return false
-        if (!q) return false
-      }
-      if (!q) return true
-      return c.name.toLowerCase().includes(q) || id.toLowerCase().includes(q) || c.type.includes(q)
-    })
-  }, [searchQuery, allCourses, state.admissionYear])
-
-  const handleAdd = useCallback((courseId) => {
-    const result = addToSimulation(courseId)
-    if (!result.success) {
-      setErrorMsg(`선수과목 필요: ${result.missing.join(', ')}`)
-      if (errorTimerRef.current) clearTimeout(errorTimerRef.current)
-      errorTimerRef.current = setTimeout(() => setErrorMsg(''), 3000)
-    }
-  }, [addToSimulation])
 
   const creditDiff = projectedTotal - totalCompleted
   const remainingAfter = Math.max(requirements.totalRequired - projectedTotal, 0)

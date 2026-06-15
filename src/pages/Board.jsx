@@ -317,6 +317,7 @@ export default function Board() {
 
   function handleDeletePost(postId) {
     const post = posts.find(p => p.id === postId)
+    if (!currentUser?.isAdmin && currentUser?.userId !== post?.authorId) return
     if (!currentUser?.isAdmin && post?.replies?.some(r => r.authorId !== post.authorId)) return
     setPendingDelete({ type: 'post', postId, title: post?.title })
   }
