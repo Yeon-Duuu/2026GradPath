@@ -107,7 +107,7 @@ export default function Dashboard() {
     allCourses,
   } = useGraduation()
 
-  const { currentUser, updateStudentInfo } = useAuth()
+  const { currentUser, updateStudentInfo, clearCompletedCourses } = useAuth()
   const badges = useBadge({ statusByCategory, isGraduatable })
   const [courseQuery, setCourseQuery] = useState('')
   const [courseTypeFilter, setCourseTypeFilter] = useState('전체')
@@ -218,6 +218,7 @@ export default function Dashboard() {
               onClick={() => {
                 if (!window.confirm('이수 과목을 전부 초기화할까요?')) return
                 dispatch({ type: 'LOAD_COURSES', payload: [] })
+                if (currentUser) clearCompletedCourses()
               }}
               className="text-xs text-gray-400 border border-gray-200 rounded px-2.5 py-1 hover:border-red-300 hover:text-red-400 transition-colors"
             >

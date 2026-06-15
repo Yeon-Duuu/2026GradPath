@@ -105,6 +105,13 @@ export function AuthProvider({ children }) {
     } catch {}
   }
 
+  async function clearCompletedCourses() {
+    if (!currentUser) return
+    try {
+      await updateDoc(doc(db, 'users', currentUser.userId), { completedCourses: [] })
+    } catch {}
+  }
+
   async function resetUserData() {
     if (!currentUser) return
     try {
@@ -140,7 +147,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo, updateNickname, resetUserData }}>
+    <AuthContext.Provider value={{ currentUser, loading, login, logout, register, updateStudentInfo, updateNickname, resetUserData, clearCompletedCourses }}>
       {children}
     </AuthContext.Provider>
   )

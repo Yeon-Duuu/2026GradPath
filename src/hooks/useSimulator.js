@@ -35,8 +35,9 @@ export function useSimulator() {
   const isProjectedGraduatable = useMemo(
     () =>
       projectedTotal >= req.totalRequired &&
-      Object.values(projectedStatus).every(s => s.isSatisfied),
-    [projectedTotal, req, projectedStatus]
+      Object.values(projectedStatus).every(s => s.isSatisfied) &&
+      projectedWarnings.every(w => !w.includes('필수 과목 미이수')),
+    [projectedTotal, req, projectedStatus, projectedWarnings]
   )
 
   const addToSimulation = useCallback(

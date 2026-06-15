@@ -14,8 +14,8 @@ export default function BoardReply() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
 
-  if (!post) return <Navigate to="/board" replace />
   if (!loading && !currentUser) return <Navigate to="/login" replace />
+  if (!post) return <Navigate to="/board" replace />
 
   async function handleSubmit(e) {
     e.preventDefault()
