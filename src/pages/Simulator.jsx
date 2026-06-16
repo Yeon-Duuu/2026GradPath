@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo, useRef } from 'react'
+import { useState, useCallback, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSimulator } from '@/hooks/useSimulator'
 import Button from '@/components/Button'
