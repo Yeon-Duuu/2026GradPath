@@ -111,6 +111,7 @@ export default function Simulator() {
   const [searchQuery, setSearchQuery] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
   const errorTimerRef = useRef(null)
+  useEffect(() => () => { if (errorTimerRef.current) clearTimeout(errorTimerRef.current) }, [])
 
   const filteredCourses = useMemo(() => {
     if (!state.studentId) return []

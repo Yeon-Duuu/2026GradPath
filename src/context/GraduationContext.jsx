@@ -84,6 +84,15 @@ export function GraduationProvider({ children }) {
     getDoc(doc(db, 'users', currentUser.userId))
       .then(snap => {
         const data = snap.exists() ? snap.data() : {}
+        if (data.admissionYear || data.studentId) {
+          dispatch({
+            type: 'SET_STUDENT',
+            payload: {
+              studentId: data.studentId ?? '',
+              admissionYear: data.admissionYear ?? '2024',
+            },
+          })
+        }
         // studentId가 없는 계정은 과목 데이터를 로드하지 않음 (학생정보 미등록 상태)
         const courses = data.studentId && Array.isArray(data.completedCourses)
           ? data.completedCourses
